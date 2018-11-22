@@ -11,21 +11,21 @@ void vMotorInit()
 
 void vSetMotorDir(BOOL bDir)
 {
-	GPIO_u8WritePortPin(PORT_A,9,U8Dir);
+	GPIO_u8WritePortPin(PORT_A,9,bDir);
 }
 
 void vSetMotorSpeed(T_U16 u16Speed)
 {
-	if(u8Speed >100)
+	if(u16Speed >100)
 	{
 		PWM1_vSetDuty(100, 2);
 	}
-	else if(u8Speed <0)
+	else if(u16Speed <0)
 	{
 		PWM1_vSetDuty(0, 2);
 	}
 	else 
 	{
-		PWM1_vSetDuty(u8Speed, 2);
+		PWM1_vSetDuty(u16Speed, 2);
 	}
 }

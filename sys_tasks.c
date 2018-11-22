@@ -13,7 +13,7 @@
 void TASK_Inits()
 {
     MCAL_vInit();
-    GPIO_u8WritePortPin(PORT_A, 10, DIGITAL, OUTPUT);	
+    GPIO_u8SetPortPin(PORT_A, 10, DIGITAL, OUTPUT);	
 }
 
 void TASK_1ms()
