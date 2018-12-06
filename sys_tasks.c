@@ -18,7 +18,24 @@ void TASK_Inits()
 
 void TASK_1ms()
 {
-
+		T_U8 u8_port = LF_u8ReadPins();
+		vSetMotorSpeed(20);
+		if((u8_port & 0x0C) == 0x0C)
+		{
+			vSetServoAngle(90);
+		}
+		else if ((u8_port & 0x30) == 0x30)
+		{
+			vSetServoAngle(60);
+		}
+		else if ((u8_port & 0x03) == 0x03)
+		{
+			vSetServoAngle(120);
+		}
+		else
+		{
+			vSetMotorSpeed(0);
+		}
 }
 
 void TASK_5ms()
