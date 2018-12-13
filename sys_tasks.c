@@ -8,34 +8,22 @@
 #include "general.h"
 #include "sys_tasks.h"
 
+#include "RTE.h"
+
 #include "mcal_init.h"
 
 void TASK_Inits()
 {
     MCAL_vInit();
-    GPIO_u8SetPortPin(PORT_A, 10, DIGITAL, OUTPUT);	
+    GPIO_u8SetPortPin(PORT_A, 10, DIGITAL, OUTPUT);
+	RTE_vMotorInit();
+	RTE_vSetMotorDir(FATA);	
+	RTE_vSetServoAngle(INAINTE);
 }
 
 void TASK_1ms()
 {
-		T_U8 u8_port = LF_u8ReadPins();
-		vSetMotorSpeed(20);
-		if((u8_port & 0x0C) == 0x0C)
-		{
-			vSetServoAngle(90);
-		}
-		else if ((u8_port & 0x30) == 0x30)
-		{
-			vSetServoAngle(60);
-		}
-		else if ((u8_port & 0x03) == 0x03)
-		{
-			vSetServoAngle(120);
-		}
-		else
-		{
-			vSetMotorSpeed(0);
-		}
+	AWS_Start_Line_Follower(20);
 }
 
 void TASK_5ms()

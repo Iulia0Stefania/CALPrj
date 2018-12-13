@@ -3,26 +3,29 @@
 #include "mcal_gpio.h"
 #include "general.h"
 
-void vMotorInit()
+#define MAXSPEED 100
+#define MINSPEED 0
+
+void HAL_vMotorInit()
 {
 	GPIO_u8SetPortPin(PORT_A,9,DIGITAL, OUTPUT);
 	PWM1_vInit();
 }
 
-void vSetMotorDir(BOOL bDir)
+void HAL_vSetMotorDir(BOOL bDir)
 {
 	GPIO_u8WritePortPin(PORT_A,9,bDir);
 }
 
-void vSetMotorSpeed(T_U16 u16Speed)
+void HAL_vSetMotorSpeed(T_U16 u16Speed)
 {
-	if(u16Speed >100)
+	if(u16Speed >MAXSPEED)
 	{
-		PWM1_vSetDuty(100, 2);
+		PWM1_vSetDuty(MAXSPEED, 2);
 	}
-	else if(u16Speed <0)
+	else if(u16Speed <MINSPEED)
 	{
-		PWM1_vSetDuty(0, 2);
+		PWM1_vSetDuty(MINSPEED, 2);
 	}
 	else 
 	{

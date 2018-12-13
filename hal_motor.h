@@ -3,11 +3,8 @@
 
 #include "general_types.h"
 
-#define INAINTE 0
-#define INAPOI 1
-
-void vMotorInit();
-void vSetMotorDir(BOOL bDir);
-void vSetMotorSpeed(T_U16 u16Speed);
+void HAL_vMotorInit();
+void HAL_vSetMotorDir(BOOL bDir);
+void HAL_vSetMotorSpeed(T_U16 u16Speed);
 
 #endif

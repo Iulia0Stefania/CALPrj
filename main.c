@@ -15,10 +15,8 @@ int main()
 	}	*/
 	TASK_Inits();
 	OSC_vInit();
-	vMotorInit();
-	vSetMotorDir(0);
-	vSetMotorSpeed(20);
-	vSetServoAngle(80);
+	TASK_vSchedule();
+
 
 	/*while(1)
 	{
@@ -32,11 +30,7 @@ int main()
 			vSetServoAngle(120);
 		}
 	}*/
-	
-	while(1)
-	{
-		TASK_1ms();
-	} 
+ 
 
     return 0;
 }

@@ -7,21 +7,24 @@
 #define minDuty 4
 #define maxDuty 11
 #define Rezolution 0.04375
+#define maxCarAngle 120
+#define minCarAngle 60
 
-void vInitServo()
+
+void HAL_vInitServo()
 {
 	PWM1_vInit();
 }
 
-void vSetServoAngle(T_U16 u16Angle)
+void HAL_vSetServoAngle(T_U16 u16Angle)
 {
-	if(u16Angle <60)	
+	if(u16Angle < minCarAngle)	
 	{
-		u16Angle = 60;
+		u16Angle = minCarAngle;
 	}
-	else if(u16Angle >120)
+	else if(u16Angle >maxCarAngle)
 	{
-		u16Angle = 120;
+		u16Angle = maxCarAngle;
 	}
 	T_F16 f16Duty = (float)(u16Angle - minAngle)*Rezolution + minDuty;
 	PWM1_vSetDuty(f16Duty,1);
