@@ -4,6 +4,9 @@
 #include "hal_line_follower.h"
 #include "general_types.h"
 
+#pragma config ICS = PGD2               // Comm Channel Select (Communicate on PGC2/EMUC2 and PGD2/EMUD2)
+#pragma config JTAGEN = ON  
+
 int main()
 {
 	/*vInitServo();

@@ -5,6 +5,7 @@
 #include "hal_servo.h"
 #include "hal_line_follower.h"
 #include "general_types.h"
+#include "hal_baterry.h"
 
 #define INAINTE 90
 #define STANGA 60
@@ -20,5 +21,6 @@
 #define RTE_vSetPinDir(bDir) LF_vSetPinsDir(bDir)
 #define RTE_vWritePins() LF_vWritePins()
 #define RTE_u8ReadPins() LF_u8ReadPins() 
-
+#define RTE_f16GetBaterryPercentage() HAL_f16GetBaterryPercentage()
+ 
 #endif

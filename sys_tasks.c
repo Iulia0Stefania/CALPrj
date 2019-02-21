@@ -12,6 +12,8 @@
 
 #include "mcal_init.h"
 
+T_F16 batteryPercentage = 0;
+
 void TASK_Inits()
 {
     MCAL_vInit();
@@ -48,5 +50,5 @@ void TASK_500ms()
 
 void TASK_1000ms()
 {
-
+   batteryPercentage = RTE_f16GetBaterryPercentage();
 }
