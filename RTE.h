@@ -22,5 +22,7 @@
 #define RTE_vWritePins() LF_vWritePins()
 #define RTE_u8ReadPins() LF_u8ReadPins() 
 #define RTE_f16GetBaterryPercentage() HAL_f16GetBaterryPercentage()
+#define RTE_f16getElapsed() QEI_f16getElapsed()
+#define RTE_vResetCount() QEI_vResetCount()
  
 #endif

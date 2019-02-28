@@ -55,3 +55,7 @@ void QEI_vResetCount()
     POS1CNT=32000;
 }
 
+T_F16 QEI_f16getElapsed()
+{
+    return (32000-QEI_u16getCount());
+}

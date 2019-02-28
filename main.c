@@ -3,6 +3,9 @@
 #include "hal_motor.h"
 #include "hal_line_follower.h"
 #include "general_types.h"
+#include "sys_tasks.h"
+#include "mcal_osc.h"
+#include "sys_schedule.h"
 
 #pragma config ICS = PGD2               // Comm Channel Select (Communicate on PGC2/EMUC2 and PGD2/EMUD2)
 #pragma config JTAGEN = ON  
@@ -17,7 +20,6 @@ int main()
 		vSetServoAngle(i);
 	}	*/
 	TASK_Inits();
-	OSC_vInit();
 	TASK_vSchedule();
 
 

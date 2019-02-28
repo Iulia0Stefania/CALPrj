@@ -9,4 +9,5 @@ general.h  \
 mcal_gpio.h  \
 hal_line_follower.h  \
  hal_baterry.h  \
-mcal_adc.h 
+mcal_adc.h  \
+mcal_encoder.h 
