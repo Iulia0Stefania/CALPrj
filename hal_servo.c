@@ -35,3 +35,4 @@ void HAL_vSetServoAngle(T_U16 u16Angle)
 	f16Duty=OFFSET+REZ*(u16Angle-MIN_ANGLE);
 	PWM1_vSetDuty(f16Duty,1);
 }
+

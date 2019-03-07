@@ -19,4 +19,6 @@ void TASK_100ms(void);
 void TASK_500ms(void);
 void TASK_1000ms(void);
 
+extern  T_U16 u16SpeedGL;
+
 #endif	/* SYS_TASKS_H */

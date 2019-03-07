@@ -14,6 +14,7 @@
 
 #include "mcal_init.h"
 
+T_U16 u16SpeedGL;
 T_F16 batteryPercentage = 0;
 
 void TASK_Inits()
@@ -23,7 +24,8 @@ void TASK_Inits()
 	RTE_vMotorInit();
 	RTE_vSetMotorDir(FATA);	
 	RTE_vSetServoAngle(INAINTE);
-    RTE_vSetMotorSpeed(30);
+    u16SpeedGL = 30;
+    RTE_vSetMotorSpeed(u16SpeedGL);
     QEI_vInit();
 }
 
@@ -35,17 +37,17 @@ void TASK_1ms()
 
 void TASK_5ms()
 {
-    AWS_Start_Line_Follower();
+    
 }
 
 void TASK_10ms()
 {   
-   AWS_Go_20_cm();
+   //AWS_Go_20_cm();
 }
 
 void TASK_100ms()
 { 
-    
+    AWS_Start_Line_Follower();
 }
 
 void TASK_500ms()

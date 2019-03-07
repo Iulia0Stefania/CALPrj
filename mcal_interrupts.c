@@ -1,6 +1,8 @@
 
 #include "mcal_interrupts.h"
-
+#include "mcal_pwm.h"
+#include "hal_motor.h"
+#include "sys_tasks.h"
 /* Interrupt Polarity */
 #define NEG_EDGE 1
 #define POS_EDGE 0
@@ -24,6 +26,7 @@ void __attribute__((__interrupt__, no_auto_psv)) _INT0Interrupt(void)
     if(NEG_EDGE == INTCON2bits.INT0EP)
     {
         bObstDetected = TRUE;
+        HAL_vSetMotorSpeed(0);
         
         /* wait for POS EDGE */
         INTCON2bits.INT0EP = POS_EDGE;
@@ -32,6 +35,7 @@ void __attribute__((__interrupt__, no_auto_psv)) _INT0Interrupt(void)
     else
     {
         bObstDetected = FALSE;
+        HAL_vSetMotorSpeed(u16SpeedGL);
         
         /* wait for NEG EDGE */
         INTCON2bits.INT0EP = NEG_EDGE;

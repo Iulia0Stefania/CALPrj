@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/debug/CALPrj.X.debug.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>16384</length>
+      <used>106</used>
+      <free>16278</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>131328</length>
+      <used>7638</used>
+      <free>123690</free>
+    </memory>
+  </executable>
+</project>
