@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=hal_motor.c main.c mcal_adc.c mcal_encoder.c mcal_gpio.c mcal_init.c mcal_interrupts.c mcal_osc.c mcal_pwm.c mcal_spi.c mcal_timers.c sys_schedule.c sys_tasks.c hal_servo.c hal_line_follower.c ASW.c hal_battery.c
+SOURCEFILES_QUOTED_IF_SPACED=hal_motor.c main.c mcal_adc.c mcal_encoder.c mcal_gpio.c mcal_init.c mcal_interrupts.c mcal_osc.c mcal_pwm.c mcal_spi.c mcal_timers.c sys_schedule.c sys_tasks.c hal_servo.c hal_line_follower.c ASW.c hal_battery.c asw_com.c hal_nRF.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/hal_motor.o ${OBJECTDIR}/main.o ${OBJECTDIR}/mcal_adc.o ${OBJECTDIR}/mcal_encoder.o ${OBJECTDIR}/mcal_gpio.o ${OBJECTDIR}/mcal_init.o ${OBJECTDIR}/mcal_interrupts.o ${OBJECTDIR}/mcal_osc.o ${OBJECTDIR}/mcal_pwm.o ${OBJECTDIR}/mcal_spi.o ${OBJECTDIR}/mcal_timers.o ${OBJECTDIR}/sys_schedule.o ${OBJECTDIR}/sys_tasks.o ${OBJECTDIR}/hal_servo.o ${OBJECTDIR}/hal_line_follower.o ${OBJECTDIR}/ASW.o ${OBJECTDIR}/hal_battery.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/hal_motor.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/mcal_adc.o.d ${OBJECTDIR}/mcal_encoder.o.d ${OBJECTDIR}/mcal_gpio.o.d ${OBJECTDIR}/mcal_init.o.d ${OBJECTDIR}/mcal_interrupts.o.d ${OBJECTDIR}/mcal_osc.o.d ${OBJECTDIR}/mcal_pwm.o.d ${OBJECTDIR}/mcal_spi.o.d ${OBJECTDIR}/mcal_timers.o.d ${OBJECTDIR}/sys_schedule.o.d ${OBJECTDIR}/sys_tasks.o.d ${OBJECTDIR}/hal_servo.o.d ${OBJECTDIR}/hal_line_follower.o.d ${OBJECTDIR}/ASW.o.d ${OBJECTDIR}/hal_battery.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/hal_motor.o ${OBJECTDIR}/main.o ${OBJECTDIR}/mcal_adc.o ${OBJECTDIR}/mcal_encoder.o ${OBJECTDIR}/mcal_gpio.o ${OBJECTDIR}/mcal_init.o ${OBJECTDIR}/mcal_interrupts.o ${OBJECTDIR}/mcal_osc.o ${OBJECTDIR}/mcal_pwm.o ${OBJECTDIR}/mcal_spi.o ${OBJECTDIR}/mcal_timers.o ${OBJECTDIR}/sys_schedule.o ${OBJECTDIR}/sys_tasks.o ${OBJECTDIR}/hal_servo.o ${OBJECTDIR}/hal_line_follower.o ${OBJECTDIR}/ASW.o ${OBJECTDIR}/hal_battery.o ${OBJECTDIR}/asw_com.o ${OBJECTDIR}/hal_nRF.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/hal_motor.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/mcal_adc.o.d ${OBJECTDIR}/mcal_encoder.o.d ${OBJECTDIR}/mcal_gpio.o.d ${OBJECTDIR}/mcal_init.o.d ${OBJECTDIR}/mcal_interrupts.o.d ${OBJECTDIR}/mcal_osc.o.d ${OBJECTDIR}/mcal_pwm.o.d ${OBJECTDIR}/mcal_spi.o.d ${OBJECTDIR}/mcal_timers.o.d ${OBJECTDIR}/sys_schedule.o.d ${OBJECTDIR}/sys_tasks.o.d ${OBJECTDIR}/hal_servo.o.d ${OBJECTDIR}/hal_line_follower.o.d ${OBJECTDIR}/ASW.o.d ${OBJECTDIR}/hal_battery.o.d ${OBJECTDIR}/asw_com.o.d ${OBJECTDIR}/hal_nRF.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/hal_motor.o ${OBJECTDIR}/main.o ${OBJECTDIR}/mcal_adc.o ${OBJECTDIR}/mcal_encoder.o ${OBJECTDIR}/mcal_gpio.o ${OBJECTDIR}/mcal_init.o ${OBJECTDIR}/mcal_interrupts.o ${OBJECTDIR}/mcal_osc.o ${OBJECTDIR}/mcal_pwm.o ${OBJECTDIR}/mcal_spi.o ${OBJECTDIR}/mcal_timers.o ${OBJECTDIR}/sys_schedule.o ${OBJECTDIR}/sys_tasks.o ${OBJECTDIR}/hal_servo.o ${OBJECTDIR}/hal_line_follower.o ${OBJECTDIR}/ASW.o ${OBJECTDIR}/hal_battery.o
+OBJECTFILES=${OBJECTDIR}/hal_motor.o ${OBJECTDIR}/main.o ${OBJECTDIR}/mcal_adc.o ${OBJECTDIR}/mcal_encoder.o ${OBJECTDIR}/mcal_gpio.o ${OBJECTDIR}/mcal_init.o ${OBJECTDIR}/mcal_interrupts.o ${OBJECTDIR}/mcal_osc.o ${OBJECTDIR}/mcal_pwm.o ${OBJECTDIR}/mcal_spi.o ${OBJECTDIR}/mcal_timers.o ${OBJECTDIR}/sys_schedule.o ${OBJECTDIR}/sys_tasks.o ${OBJECTDIR}/hal_servo.o ${OBJECTDIR}/hal_line_follower.o ${OBJECTDIR}/ASW.o ${OBJECTDIR}/hal_battery.o ${OBJECTDIR}/asw_com.o ${OBJECTDIR}/hal_nRF.o
 
 # Source Files
-SOURCEFILES=hal_motor.c main.c mcal_adc.c mcal_encoder.c mcal_gpio.c mcal_init.c mcal_interrupts.c mcal_osc.c mcal_pwm.c mcal_spi.c mcal_timers.c sys_schedule.c sys_tasks.c hal_servo.c hal_line_follower.c ASW.c hal_battery.c
+SOURCEFILES=hal_motor.c main.c mcal_adc.c mcal_encoder.c mcal_gpio.c mcal_init.c mcal_interrupts.c mcal_osc.c mcal_pwm.c mcal_spi.c mcal_timers.c sys_schedule.c sys_tasks.c hal_servo.c hal_line_follower.c ASW.c hal_battery.c asw_com.c hal_nRF.c
 
 
 CFLAGS=
@@ -213,6 +213,20 @@ ${OBJECTDIR}/hal_battery.o: hal_battery.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  hal_battery.c  -o ${OBJECTDIR}/hal_battery.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/hal_battery.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I"." -msmart-io=1 -Wall -msfr-warn=off  
 	@${FIXDEPS} "${OBJECTDIR}/hal_battery.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/asw_com.o: asw_com.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/asw_com.o.d 
+	@${RM} ${OBJECTDIR}/asw_com.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  asw_com.c  -o ${OBJECTDIR}/asw_com.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/asw_com.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I"." -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/asw_com.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/hal_nRF.o: hal_nRF.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/hal_nRF.o.d 
+	@${RM} ${OBJECTDIR}/hal_nRF.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  hal_nRF.c  -o ${OBJECTDIR}/hal_nRF.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/hal_nRF.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1    -omf=elf -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I"." -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/hal_nRF.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 else
 ${OBJECTDIR}/hal_motor.o: hal_motor.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -332,6 +346,20 @@ ${OBJECTDIR}/hal_battery.o: hal_battery.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/hal_battery.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  hal_battery.c  -o ${OBJECTDIR}/hal_battery.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/hal_battery.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I"." -msmart-io=1 -Wall -msfr-warn=off  
 	@${FIXDEPS} "${OBJECTDIR}/hal_battery.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/asw_com.o: asw_com.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/asw_com.o.d 
+	@${RM} ${OBJECTDIR}/asw_com.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  asw_com.c  -o ${OBJECTDIR}/asw_com.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/asw_com.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I"." -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/asw_com.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/hal_nRF.o: hal_nRF.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/hal_nRF.o.d 
+	@${RM} ${OBJECTDIR}/hal_nRF.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  hal_nRF.c  -o ${OBJECTDIR}/hal_nRF.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/hal_nRF.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)  -no-legacy-libc  $(COMPARISON_BUILD)  -O0 -I"." -msmart-io=1 -Wall -msfr-warn=off  
+	@${FIXDEPS} "${OBJECTDIR}/hal_nRF.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

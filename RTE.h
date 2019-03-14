@@ -24,5 +24,8 @@
 #define RTE_f16GetBaterryPercentage() HAL_f16GetBaterryPercentage()
 #define RTE_f16getElapsed() QEI_f16getElapsed()
 #define RTE_vResetCount() QEI_vResetCount()
+#define RTE_RF_vCheckIRQ() RF_vCheckIRQ()
+#define RTE_RF_vBeginTransmit(u8Message) RF_vBeginTransmit(u8Message)
+#define RTE_RF_vBeginReceive() RF_vBeginReceive()
  
 #endif

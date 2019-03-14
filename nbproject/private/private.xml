@@ -3,21 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/mcal_encoder.h</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/hal_baterry.h</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/mcal_osc.c</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/RTE.h</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/hal_servo.c</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/sys_tasks.h</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/sys_schedule.c</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/ASW.h</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/hal_motor.c</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/mcal_pwm.c</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/main.c</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/ASW.c</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/sys_tasks.c</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/mcal_encoder.c</file>
-            <file>file:/D:/CAL/Iulia_Stefania/encoder/CALPrj/general_types.h</file>
+            <file>file:/D:/CAL/CALPrj/hal_nRF.c</file>
+            <file>file:/D:/CAL/CALPrj/RTE.h</file>
+            <file>file:/D:/CAL/CALPrj/sys_tasks.c</file>
+            <file>file:/D:/CAL/CALPrj/asw_com.h</file>
+            <file>file:/D:/CAL/CALPrj/hal_nRF.h</file>
+            <file>file:/D:/CAL/CALPrj/asw_com.c</file>
+            <file>file:/D:/CAL/CALPrj/general_types.h</file>
+            <file>file:/D:/CAL/CALPrj/ASW.c</file>
         </group>
     </open-files>
 </project-private>

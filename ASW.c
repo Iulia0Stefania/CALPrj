@@ -28,10 +28,14 @@ void AWS_Start_Line_Follower()
         {
            u16AngleGL = 120; 
         }
-		/*else if (u8_port == 0x00)
+		else if (u8_port == 0x00)
 		{
-			RTE_vSetMotorSpeed(0);
-		}*/
+			//findRoad()
+		}
+        else if(u8_port == 0x1F) //tot 1
+        {
+            //chemi RF_TRANSMIT
+        }
 }
 
 void AWS_Go_20_cm()

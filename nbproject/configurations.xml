@@ -23,6 +23,8 @@
       <itemPath>RTE.h</itemPath>
       <itemPath>ASW.h</itemPath>
       <itemPath>hal_baterry.h</itemPath>
+      <itemPath>asw_com.h</itemPath>
+      <itemPath>hal_nRF.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -48,6 +50,8 @@
       <itemPath>hal_line_follower.c</itemPath>
       <itemPath>ASW.c</itemPath>
       <itemPath>hal_battery.c</itemPath>
+      <itemPath>asw_com.c</itemPath>
+      <itemPath>hal_nRF.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
