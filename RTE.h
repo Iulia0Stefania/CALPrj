@@ -6,6 +6,7 @@
 #include "hal_line_follower.h"
 #include "general_types.h"
 #include "hal_baterry.h"
+#include "hal_nRF.h"
 
 #define INAINTE 90
 #define STANGA 60

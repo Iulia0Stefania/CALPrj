@@ -18,8 +18,8 @@ typedef enum _BOOL{FALSE=0, TRUE=1, UNDEFINED=2} BOOL;
 typedef struct carInfo
 {
     T_U8 u8RoadNum;
-    T_U8 u8Direction;
-    BOOL bIsOnMain;
+    T_S16 s16Direction; 
+    BOOL bintersection;
 }carInfo; 
 
 #endif	/* GENERAL_TYPES_H */

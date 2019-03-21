@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/CAL/CALPrj/hal_nRF.c</file>
-            <file>file:/D:/CAL/CALPrj/RTE.h</file>
-            <file>file:/D:/CAL/CALPrj/sys_tasks.c</file>
             <file>file:/D:/CAL/CALPrj/asw_com.h</file>
             <file>file:/D:/CAL/CALPrj/hal_nRF.h</file>
             <file>file:/D:/CAL/CALPrj/asw_com.c</file>
+            <file>file:/D:/CAL/CALPrj/hal_nRF.c</file>
             <file>file:/D:/CAL/CALPrj/general_types.h</file>
+            <file>file:/D:/CAL/CALPrj/RTE.h</file>
             <file>file:/D:/CAL/CALPrj/ASW.c</file>
+            <file>file:/D:/CAL/CALPrj/sys_tasks.c</file>
         </group>
     </open-files>
 </project-private>

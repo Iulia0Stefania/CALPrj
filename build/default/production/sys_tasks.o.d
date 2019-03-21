@@ -11,10 +11,11 @@ hal_motor.h  \
 hal_line_follower.h  \
 hal_baterry.h  \
 mcal_adc.h  \
-mcal_encoder.h  \
- mcal_init.h  \
+hal_nRF.h  \
+ mcal_encoder.h  \
+mcal_init.h  \
 mcal_osc.h  \
 mcal_pwm.h  \
 mcal_interrupts.h  \
-mcal_spi.h  \
- mcal_timers.h 
+ mcal_spi.h  \
+mcal_timers.h 

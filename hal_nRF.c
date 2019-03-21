@@ -9,6 +9,7 @@ T_U8 u8RxBuff_Index;
 enRF_OPMODE eRF_OpMode;
 BOOL bRF_IRQ;
 BOOL u8NewRX;
+extern BOOL bTXflag;
 
 
 /***********************************************************************************************************************
@@ -611,6 +612,7 @@ void RF_vBeginTransmit(T_U8 u8Data)
         
         eRF_OpMode = modeTX;        
     }
+    bTXflag = FALSE;
     /* Poll u8IRQ_flag and check u8RF_Mode (= TX), to know when the RF module transmitted data. */
 }
 
