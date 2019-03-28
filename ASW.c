@@ -7,24 +7,47 @@
  extern carInfo car;
  
 
-void AWS_Start_Line_Follower()
+/*void AWS_Start_Line_Follower()
 {
 		T_U8 u8_port = RTE_u8ReadPins();
-		if((u8_port & 0x0C) == 0x0C)  //INAINTE
+		if((u8_port & 0x0E) == 0x0E)  //INTERSECTIE se uita la directie
 		{
-			RTE_vSetServoAngle(u16AngleGL);
-            u16AngleGL = 90;
+            switch(car.s16Direction)
+            {
+                case 0:
+                    RTE_vSetServoAngle(u16AngleGL);
+                    u16AngleGL = 90;
+                    break;
+                case 1:
+                    u16AngleGL+=2;
+                    RTE_vSetServoAngle(u16AngleGL);
+                    break;
+                case 2:
+                     u16AngleGL-=2;
+                    RTE_vSetServoAngle(u16AngleGL);
+                    break;           
+            }	
 		}
-		else if ((u8_port & 0x30) == 0x30) //STANGA
-		{
-            u16AngleGL-=2;
-			RTE_vSetServoAngle(u16AngleGL);
-		}
-		else if ((u8_port & 0x03) == 0x03) //DREAPTA
-		{
-            u16AngleGL+=2;
-			RTE_vSetServoAngle(u16AngleGL);
-		}
+        else //DACA E UN SINGUR DRUM se uita la line follower
+        {
+            if((u8_port & 0x0C) == 0x0C)  //INAINTE
+            {
+                RTE_vSetServoAngle(u16AngleGL);
+                u16AngleGL = 90;
+            }
+            else if ((u8_port & 0x30) == 0x30) //STANGA
+            {
+                u16AngleGL-=2;
+                RTE_vSetServoAngle(u16AngleGL);
+            }
+            else if ((u8_port & 0x03) == 0x03) //DREAPTA
+            {
+                u16AngleGL+=2
+                        ;
+                RTE_vSetServoAngle(u16AngleGL);
+            }
+            
+        }
         if(u16AngleGL < 60)
         {
             u16AngleGL = 60;
@@ -32,7 +55,7 @@ void AWS_Start_Line_Follower()
         {
            u16AngleGL = 120; 
         }
-}
+}*/
 
 void AWS_Go_20_cm()
 {
@@ -58,11 +81,11 @@ T_U8 u8RoadNumber()
     static T_U8 u8current = 0;
     u8previous = u8current;
     u8current = RTE_u8ReadPins();
-    if(u8previous == 0x0C && u8current == 0x00)
+    if((u8previous != 0x00) && ((u8current<<3) == 0x00))
     {
         ++u8gaps;
     }
-    if(u8current == 0x1F) //when it sees all black 
+    if((u8current & 0x1F)  == 0x1F) //when it sees all black 
     {
         return u8gaps;
     }
@@ -75,7 +98,7 @@ T_U8 u8RoadNumber()
 BOOL bReachIntersection()
 {
      T_U8 u8current = RTE_u8ReadPins();
-     if(u8current == 0x1F)
+     if((u8current & 0x1F )== 0x1F)
      {
          return TRUE;
      }
@@ -133,7 +156,7 @@ void vStateMachine()
     switch(u8currentState)
     {
         case 0: 
-            if(car.bintersection == TRUE)
+            if(car.bintersection == TRUE) //se duce starea 1
             {
                 bTXflag = TRUE;
                 T_U8 u8Message = u8WriteMessage();
@@ -144,11 +167,15 @@ void vStateMachine()
                
                 u8nextState = 1;
             }
-            else
+            else //ramane starea 0
             {
                 u8nextState = 0;
                 car.u8RoadNum = u8RoadNumber();
-                car.bintersection = bReachIntersection();
+                if(car.u8RoadNum !=8)
+                {
+                    T_U8 aci=0;
+                }
+                car.bintersection = bReachIntersection();              
             }
             break;
     }
@@ -174,4 +201,32 @@ void vStateMachine()
 		//	RTE_vSetMotorSpeed(0);
 		//}
 }*/
+
+
+ void AWS_Start_Line_Follower()
+{
+		T_U8 u8_port = RTE_u8ReadPins();
+		if((u8_port & 0x0C) == 0x0C)  //INAINTE
+		{
+			RTE_vSetServoAngle(u16AngleGL);
+            u16AngleGL = 90;
+		}
+		else if ((u8_port & 0x30) == 0x30) //STANGA
+		{
+            u16AngleGL-=2;
+			RTE_vSetServoAngle(u16AngleGL);
+		}
+		else if ((u8_port & 0x03) == 0x03) //DREAPTA
+		{
+            u16AngleGL+=2;
+			RTE_vSetServoAngle(u16AngleGL);
+		}
+        if(u16AngleGL < 60)
+        {
+            u16AngleGL = 60;
+        }else if(u16AngleGL >120)
+        {
+           u16AngleGL = 120; 
+        }
+}
 

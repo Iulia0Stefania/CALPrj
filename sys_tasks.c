@@ -13,7 +13,7 @@
 #include "mcal_encoder.h"
 
 #include "mcal_init.h"
-#include <stdlib.h>
+
 
 T_U16 u16SpeedGL;
 T_F16 batteryPercentage = 0;
@@ -29,10 +29,12 @@ void TASK_Inits()
 	RTE_vMotorInit();
 	RTE_vSetMotorDir(FATA);	
 	RTE_vSetServoAngle(INAINTE);
-    u16SpeedGL = 10 + rand()%21; //generate speed at start
+    T_U16 rand = ADC_u16Read(0);
+    //u16SpeedGL = 15 + rand%21; //generate speed at start
+    u16SpeedGL = 17;
     RTE_vSetMotorSpeed(u16SpeedGL);
     QEI_vInit();
-    car.s16Direction = rand()%3; //generate road at start
+    car.s16Direction = rand%3; //generate road at start
 }
 
 void TASK_1ms()
@@ -52,13 +54,14 @@ void TASK_5ms()
 void TASK_10ms()
 {   
    //AWS_Go_20_cm();
-     AWS_Start_Line_Follower();
+   AWS_Start_Line_Follower();
+   vStateMachine();
     
 }
 
 void TASK_100ms()
 { 
-   
+    
 }
 
 void TASK_500ms()
