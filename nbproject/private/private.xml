@@ -8,11 +8,12 @@
             <file>file:/D:/CAL/CALPrj/sys_tasks.c</file>
             <file>file:/D:/CAL/CALPrj/ASW.h</file>
             <file>file:/D:/CAL/CALPrj/hal_line_follower.c</file>
+            <file>file:/D:/CAL/CALPrj/main.c</file>
             <file>file:/D:/CAL/CALPrj/sys_schedule.c</file>
             <file>file:/D:/CAL/CALPrj/mcal_encoder.c</file>
             <file>file:/D:/CAL/CALPrj/hal_battery.c</file>
-            <file>file:/D:/CAL/CALPrj/ASW.c</file>
             <file>file:/D:/CAL/CALPrj/general.h</file>
+            <file>file:/D:/CAL/CALPrj/ASW.c</file>
         </group>
     </open-files>
 </project-private>

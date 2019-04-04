@@ -1,16 +1,19 @@
 #include "ASW.h"
 #include "sys_tasks.h"
+#include "asw_com.h"
 
  T_F16 f16elapsedCMglobal;
  T_U16 u16AngleGL = 90;
  BOOL bTXflag = FALSE;
+ 
+ BOOL RoadNumflag = FALSE;
  extern carInfo car;
  
 
-/*void AWS_Start_Line_Follower()
+void AWS_Start_Line_Follower() //de testat
 {
 		T_U8 u8_port = RTE_u8ReadPins();
-		if((u8_port & 0x0E) == 0x0E)  //INTERSECTIE se uita la directie
+		if(car.bintersection && (u8_port  == 0x3F))  //DACA E INTERSECTIE se uita la directie
 		{
             switch(car.s16Direction)
             {
@@ -55,7 +58,7 @@
         {
            u16AngleGL = 120; 
         }
-}*/
+}
 
 void AWS_Go_20_cm()
 {
@@ -85,8 +88,9 @@ T_U8 u8RoadNumber()
     {
         ++u8gaps;
     }
-    if((u8current & 0x1F)  == 0x1F) //when it sees all black 
+    if(u8current == 0x3F) //prima bara
     {
+		RoadNumflag = TRUE;
         return u8gaps;
     }
     else
@@ -97,8 +101,11 @@ T_U8 u8RoadNumber()
 
 BOOL bReachIntersection()
 {
-     T_U8 u8current = RTE_u8ReadPins();
-     if((u8current & 0x1F )== 0x1F)
+    static T_U8 u8previous = 0;
+    static T_U8 u8current = 0;
+    u8previous = u8current;
+    u8current = RTE_u8ReadPins();
+     if((u8current == 0x3F) && ((u8previous != 0x3F) && (u8previous != 0x00))) //daca intalneste linie orizontala
      {
          return TRUE;
      }
@@ -123,7 +130,7 @@ T_U8 u8WriteMessage()
            u8Message |= 0x02; // b1=1 si b0=0 - drumul 2
            break;
        case 3:
-           u8Message &= 0x03; //b1=1 si b0=0 - drumul 3
+           u8Message |= 0x03; //b1=1 si b0=0 - drumul 3
            break;
    }
    switch(car.s16Direction)
@@ -162,7 +169,7 @@ void vStateMachine()
                 T_U8 u8Message = u8WriteMessage();
                 if(bTXflag)
                 {
-                   RTE_RF_vBeginTransmit(u8Message);
+                    COM_vSendMessage(u8Message);
                 }
                
                 u8nextState = 1;
@@ -170,13 +177,20 @@ void vStateMachine()
             else //ramane starea 0
             {
                 u8nextState = 0;
-                car.u8RoadNum = u8RoadNumber();
-                if(car.u8RoadNum !=8)
+               
+                if(!RoadNumflag)
                 {
-                    T_U8 aci=0;
+					car.u8RoadNum = u8RoadNumber();
                 }
-                car.bintersection = bReachIntersection();              
+				else
+				{
+					car.bintersection = bReachIntersection();
+				}
+                            
             }
+            break;
+        case 1:
+            
             break;
     }
 }
@@ -203,7 +217,7 @@ void vStateMachine()
 }*/
 
 
- void AWS_Start_Line_Follower()
+ /*void AWS_Start_Line_Follower()
 {
 		T_U8 u8_port = RTE_u8ReadPins();
 		if((u8_port & 0x0C) == 0x0C)  //INAINTE
@@ -228,5 +242,7 @@ void vStateMachine()
         {
            u16AngleGL = 120; 
         }
-}
+}*/
+
+  
 

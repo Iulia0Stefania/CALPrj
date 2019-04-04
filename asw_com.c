@@ -14,6 +14,8 @@
 extern T_U8 au8RxBuff[];
 extern T_U8 u8RxBuff_Index;
 extern BOOL u8NewRX;
+extern carInfo car;
+BOOL bIsConflict = FALSE;
 
 /***********************************************************************************************************************
 *  Function name    : COM_vCheckIRQ
@@ -77,7 +79,31 @@ void COM_vStartListening()
 ***********************************************************************************************************************/
 void COM_vProcessMessage(T_U8 u8Message)
 {
-    
+    carInfo otherCar;
+    otherCar.u8RoadNum = u8Message & 0x03;
+    otherCar.s16Direction = u8Message & 0x0C;
+    switch(otherCar.u8RoadNum)
+    {
+        case 0: 
+            switch(otherCar.s16Direction)
+            {
+                case 0: 
+                if(car.u8RoadNum == 3 && car.s16Direction == 1)
+                {
+                    bIsConflict = TRUE;
+                }
+                else if(car.u8RoadNum == 1 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }   
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;
+            }
+            break;            
+    }
 }
 
 /***********************************************************************************************************************

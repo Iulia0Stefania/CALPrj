@@ -22,7 +22,7 @@ carInfo car;
 
 void TASK_Inits()
 {
-    car.bintersection = UNDEFINED;
+    car.bintersection = FALSE;
     car.u8RoadNum = 8;
     MCAL_vInit();
     GPIO_u8SetPortPin(PORT_A, 10, DIGITAL, OUTPUT);
@@ -41,7 +41,7 @@ void TASK_1ms()
 {
 	if(!bTXflag)
     {
-        RTE_RF_vBeginReceive();
+        COM_vStartListening();
     }
   
 }
