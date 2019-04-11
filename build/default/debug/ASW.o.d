@@ -12,4 +12,5 @@ hal_baterry.h  \
  mcal_adc.h  \
 hal_nRF.h  \
 mcal_encoder.h  \
-sys_tasks.h 
+sys_tasks.h  \
+asw_com.h 

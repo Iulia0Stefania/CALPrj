@@ -7,7 +7,7 @@
 
 #include "general.h"
 #include "sys_tasks.h"
-
+#include "asw_com.h"
 #include "ASW.h"
 #include "RTE.h"
 #include "mcal_encoder.h"
@@ -22,8 +22,9 @@ carInfo car;
 
 void TASK_Inits()
 {
-    car.bintersection = FALSE;
+    car.breachInt = FALSE;
     car.u8RoadNum = 8;
+    car.breachInt = FALSE;
     MCAL_vInit();
     GPIO_u8SetPortPin(PORT_A, 10, DIGITAL, OUTPUT);
 	RTE_vMotorInit();
@@ -54,14 +55,13 @@ void TASK_5ms()
 void TASK_10ms()
 {   
    //AWS_Go_20_cm();
-   AWS_Start_Line_Follower();
-   vStateMachine();
-    
+  
+   vStateMachine(); 
 }
 
 void TASK_100ms()
 { 
-    
+     AWS_Start_Line_Follower();
 }
 
 void TASK_500ms()

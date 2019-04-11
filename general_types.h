@@ -19,7 +19,8 @@ typedef struct carInfo
 {
     T_U8 u8RoadNum;
     T_S16 s16Direction; 
-    BOOL bintersection;
+    BOOL breachInt;
+    BOOL bInInt;
 }carInfo; 
 
 #endif	/* GENERAL_TYPES_H */

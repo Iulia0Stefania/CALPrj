@@ -1,4 +1,5 @@
 #include "ASW.h"
+#include "RTE.h"
 #include "sys_tasks.h"
 #include "asw_com.h"
 
@@ -8,12 +9,15 @@
  
  BOOL RoadNumflag = FALSE;
  extern carInfo car;
+ extern BOOL bIsConflict;
+ extern T_U16 u16SpeedGL;
+ static T_U8 u8nextState = 0;
  
 
 void AWS_Start_Line_Follower() //de testat
 {
 		T_U8 u8_port = RTE_u8ReadPins();
-		if(car.bintersection && (u8_port  == 0x3F))  //DACA E INTERSECTIE se uita la directie
+		if(car.breachInt && (u8_port  == 0x3F))  //DACA E INTERSECTIE se uita la directie
 		{
             switch(car.s16Direction)
             {
@@ -145,7 +149,7 @@ T_U8 u8WriteMessage()
            u8Message |=0x08; //b3=1 si b2=0 -stanga
            break;         
    }
-   if(car.bintersection)
+   if(car.bInInt)
    {
        u8Message |=0x10;
    }
@@ -157,14 +161,13 @@ T_U8 u8WriteMessage()
 }
 
 void vStateMachine()
-{
-    static T_U8 u8currentState = 0;
-    T_U8 u8nextState = 8;
-    switch(u8currentState)
+{  
+    switch(u8nextState)
     {
         case 0: 
-            if(car.bintersection == TRUE) //se duce starea 1
+            if(car.breachInt == TRUE) //se duce starea 1
             {
+                RTE_vSetMotorSpeed(0);
                 bTXflag = TRUE;
                 T_U8 u8Message = u8WriteMessage();
                 if(bTXflag)
@@ -184,14 +187,40 @@ void vStateMachine()
                 }
 				else
 				{
-					car.bintersection = bReachIntersection();
-				}
-                            
+					car.breachInt = bReachIntersection();
+				}                          
             }
-            break;
+        break;
         case 1:
+            RTE_vSetMotorSpeed(0);
+            COM_vProcessFIFO();
+            if(bIsConflict) 
+            {
+                bTXflag = TRUE;
+                T_U8 u8Message = u8WriteMessage();
+                if(bTXflag)
+                {
+                    COM_vSendMessage(u8Message);
+                }
+                u8nextState = 1;    
+            }
+            else
+            {
+                RTE_vSetMotorSpeed(u16SpeedGL);
+                u8nextState = 2;
+            }           
+        break;
+        case 2:
+            if((RTE_u8ReadPins()<<3) == 0x00) //starea 3
+            {
+                RTE_vSetMotorSpeed(0);
+            }
+            else //starea 2
+            {
+                RTE_vSetMotorSpeed(u16SpeedGL);
+            }
+        break;
             
-            break;
     }
 }
 

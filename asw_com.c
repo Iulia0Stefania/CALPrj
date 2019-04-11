@@ -88,11 +88,43 @@ void COM_vProcessMessage(T_U8 u8Message)
             switch(otherCar.s16Direction)
             {
                 case 0: 
-                if(car.u8RoadNum == 3 && car.s16Direction == 1)
+                if(car.u8RoadNum == 1 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }  
+                else if(car.u8RoadNum == 1 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                } 
+                else if(car.u8RoadNum == 2 && car.s16Direction == 2)
+                {
+                  bIsConflict = TRUE;  
+                }
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;
+                case 1:
+                    if(car.u8RoadNum == 1 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                }   
+                else if(car.u8RoadNum == 2 && car.s16Direction == 2)
                 {
                     bIsConflict = TRUE;
                 }
-                else if(car.u8RoadNum == 1 && car.s16Direction == 2)
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;
+                case 2:
+                    if(car.u8RoadNum == 1 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }  
+                    if(car.u8RoadNum == 1 && car.s16Direction == 0)
                 {
                     bIsConflict = TRUE;
                 }   
@@ -101,8 +133,170 @@ void COM_vProcessMessage(T_U8 u8Message)
                     bIsConflict = FALSE;
                 }
                 break;
+                    
             }
-            break;            
+            break; 
+        case 1:
+            switch(otherCar.s16Direction)
+            {
+                case 0: 
+                if(car.u8RoadNum == 3 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }  
+                else if(car.u8RoadNum == 2 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                } 
+                else if(car.u8RoadNum == 2 && car.s16Direction == 2)
+                {
+                  bIsConflict = TRUE;  
+                }
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;
+                case 1:
+                    if(car.u8RoadNum == 2 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                }   
+                else if(car.u8RoadNum == 3 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;
+                case 2:
+                    if(car.u8RoadNum == 3 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                }  
+                    if(car.u8RoadNum == 3 && car.s16Direction == 1)
+                {
+                    bIsConflict = TRUE;
+                }  
+                    if(car.u8RoadNum == 2 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                }   
+                    if(car.u8RoadNum == 2 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }   
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;                
+            }
+            break; 
+        case 2:
+            switch(otherCar.s16Direction)
+            {
+                case 0: 
+                if(car.u8RoadNum == 0 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }  
+                else if(car.u8RoadNum == 3 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                } 
+                else if(car.u8RoadNum == 3 && car.s16Direction == 2)
+                {
+                  bIsConflict = TRUE;  
+                }
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;
+                case 1:
+                    if(car.u8RoadNum == 0 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }   
+                else if(car.u8RoadNum == 3 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                }
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;
+                case 2:
+                    if(car.u8RoadNum == 3 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                }  
+                    if(car.u8RoadNum == 3 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }  
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;         
+            }
+            break;
+        case 3:
+            switch(otherCar.s16Direction)
+            {
+                case 0: 
+                if(car.u8RoadNum == 1 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }  
+                else if(car.u8RoadNum == 0 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                } 
+                else if(car.u8RoadNum == 0 && car.s16Direction == 2)
+                {
+                  bIsConflict = TRUE;  
+                }
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;
+                case 1:
+                    if(car.u8RoadNum == 1 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }   
+                else if(car.u8RoadNum == 0 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                }
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;
+                case 2:
+                    if(car.u8RoadNum == 0 && car.s16Direction == 0)
+                {
+                    bIsConflict = TRUE;
+                }  
+                    if(car.u8RoadNum == 0 && car.s16Direction == 2)
+                {
+                    bIsConflict = TRUE;
+                }  
+                else
+                {
+                    bIsConflict = FALSE;
+                }
+                break;         
+            }
+            break;    
     }
 }
 
@@ -128,6 +322,10 @@ void COM_vProcessFIFO()
             COM_vProcessMessage(au8RxBuff[i]);
         } 
         u8RxBuff_Index = 0;
+    }
+    else
+    {
+        bIsConflict = FALSE;
     }
 }
 

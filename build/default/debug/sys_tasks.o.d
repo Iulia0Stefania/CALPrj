@@ -4,6 +4,7 @@ general.h  \
 general_types.h  \
  mcal_gpio.h  \
 sys_tasks.h  \
+asw_com.h  \
 ASW.h  \
 RTE.h  \
 hal_motor.h  \

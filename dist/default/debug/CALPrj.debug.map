@@ -4,11 +4,11 @@ Tool Name:
   c:\program files (x86)\microchip\xc16\v1.36\bin\bin\..\bin/elf-ld.exe
 
 Command:
-  -TC:\\Users\\student\\AppData\\Local\\Temp\\tmp00004144.00 \
-  -TC:\\Users\\student\\AppData\\Local\\Temp\\tmp00004144.01 \
-  -TC:\\Users\\student\\AppData\\Local\\Temp\\tmp00004144.02 \
-  -TC:\\Users\\student\\AppData\\Local\\Temp\\tmp00004144.03 \
-  -TC:\\Users\\student\\AppData\\Local\\Temp\\tmp00004144.04 \
+  -TC:\\Users\\student\\AppData\\Local\\Temp\\tmp00000fbc.00 \
+  -TC:\\Users\\student\\AppData\\Local\\Temp\\tmp00000fbc.01 \
+  -TC:\\Users\\student\\AppData\\Local\\Temp\\tmp00000fbc.02 \
+  -TC:\\Users\\student\\AppData\\Local\\Temp\\tmp00000fbc.03 \
+  -TC:\\Users\\student\\AppData\\Local\\Temp\\tmp00000fbc.04 \
   -p33FJ128MC804 \
   -o \
   dist/default/debug/CALPrj.debug.elf \
@@ -115,12 +115,12 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x476           0x6b1  (1713)
 .const                       0x676                 0x6             0x9  (9)
-.text                        0x67c              0x1512          0x1f9b  (8091)
-.dinit                      0x1b8e                0x3a            0x57  (87)
-.init.delay32               0x1bc8                0x1c            0x2a  (42)
-.text                       0x1be4                0x32            0x4b  (75)
+.text                        0x67c              0x18ae          0x2505  (9477)
+.dinit                      0x1f2a                0x3a            0x57  (87)
+.init.delay32               0x1f64                0x1c            0x2a  (42)
+.text                       0x1f80                0x32            0x4b  (75)
 
-                 Total "program" memory used (bytes):         0x2721  (10017) 7%
+                 Total "program" memory used (bytes):         0x2c8b  (11403) 8%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x4000]
@@ -132,11 +132,12 @@ reserve_data_0x820           0x820                 0x2             0x2  (2)
 reserve_data_0x822           0x822                 0x2             0x2  (2)
 reserve_data_0x824           0x824                 0x2             0x2  (2)
 reserve_data_0x826           0x826                0x2a            0x2a  (42)
-.nbss                        0x850                   0            0x2e  (46)
-.ndata                       0x87e                   0             0x2  (2)
-.bss                         0x880                   0            0x26  (38)
+.nbss                        0x850                   0            0x36  (54)
+.ndata                       0x886                   0             0x2  (2)
+.nbss                        0x888                   0             0x2  (2)
+.bss                         0x88a                   0            0x20  (32)
 
-                 Total "data" memory used (bytes):           0xa6  (166) 1%
+                 Total "data" memory used (bytes):           0xaa  (170) 1%
 
 
 Dynamic Memory Usage
@@ -144,58 +145,60 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x8a6                              0x3f5a  (16218)
+stack                        0x8aa                              0x3f56  (16214)
 
-                 Maximum dynamic memory (bytes):         0x3f5a  (16218)
+                 Maximum dynamic memory (bytes):         0x3f56  (16214)
 
 
 External Symbols in Data Memory (by address):
 
-                    0x0850                  _f16elapsedCMglobal
-                    0x0854                  _bTXflag
-                    0x0856                  _RoadNumflag
-                    0x085e                  _u16Tim2IntCnt
-                    0x0860                  _u16Tim3IntCnt
-                    0x0862                  _u8Tim2IntFlag
-                    0x0864                  _u8Tim3IntFlag
-                    0x0866                  _u8FlagTask_5ms
-                    0x0868                  _u8FlagTask_10ms
-                    0x086a                  _u8FlagTask_500ms
-                    0x086c                  _u8FlagTask_1000ms
-                    0x086e                  _u8RxBuff_Index
-                    0x0870                  _eRF_OpMode
-                    0x0872                  _bRF_IRQ
-                    0x0874                  _u8NewRX
-                    0x0876                  _u16SpeedGL
-                    0x0878                  _batteryPercentage
-                    0x087c                  _bObstDetected
-                    0x087e                  _u16AngleGL
-                    0x0880                  _au8RxBuff
-                    0x08a0                  _car
+                    0x0850                  _u16SpeedGL
+                    0x0852                  _batteryPercentage
+                    0x0856                  _car
+                    0x085e                  _f16elapsedCMglobal
+                    0x0862                  _bTXflag
+                    0x0864                  _RoadNumflag
+                    0x086c                  _u16Tim2IntCnt
+                    0x086e                  _u16Tim3IntCnt
+                    0x0870                  _u8Tim2IntFlag
+                    0x0872                  _u8Tim3IntFlag
+                    0x0874                  _u8FlagTask_5ms
+                    0x0876                  _u8FlagTask_10ms
+                    0x0878                  _u8FlagTask_500ms
+                    0x087a                  _u8FlagTask_1000ms
+                    0x087c                  _u8RxBuff_Index
+                    0x087e                  _eRF_OpMode
+                    0x0880                  _bRF_IRQ
+                    0x0882                  _u8NewRX
+                    0x0884                  _bObstDetected
+                    0x0886                  _u16AngleGL
+                    0x0888                  _bIsConflict
+                    0x088a                  _au8RxBuff
 
 External Symbols in Data Memory (by name):
 
-                    0x0856                  _RoadNumflag
-                    0x0880                  _au8RxBuff
-                    0x087c                  _bObstDetected
-                    0x0872                  _bRF_IRQ
-                    0x0854                  _bTXflag
-                    0x0878                  _batteryPercentage
-                    0x08a0                  _car
-                    0x0870                  _eRF_OpMode
-                    0x0850                  _f16elapsedCMglobal
-                    0x087e                  _u16AngleGL
-                    0x0876                  _u16SpeedGL
-                    0x085e                  _u16Tim2IntCnt
-                    0x0860                  _u16Tim3IntCnt
-                    0x086c                  _u8FlagTask_1000ms
-                    0x0868                  _u8FlagTask_10ms
-                    0x086a                  _u8FlagTask_500ms
-                    0x0866                  _u8FlagTask_5ms
-                    0x0874                  _u8NewRX
-                    0x086e                  _u8RxBuff_Index
-                    0x0862                  _u8Tim2IntFlag
-                    0x0864                  _u8Tim3IntFlag
+                    0x0864                  _RoadNumflag
+                    0x088a                  _au8RxBuff
+                    0x0888                  _bIsConflict
+                    0x0884                  _bObstDetected
+                    0x0880                  _bRF_IRQ
+                    0x0862                  _bTXflag
+                    0x0852                  _batteryPercentage
+                    0x0856                  _car
+                    0x087e                  _eRF_OpMode
+                    0x085e                  _f16elapsedCMglobal
+                    0x0886                  _u16AngleGL
+                    0x0850                  _u16SpeedGL
+                    0x086c                  _u16Tim2IntCnt
+                    0x086e                  _u16Tim3IntCnt
+                    0x087a                  _u8FlagTask_1000ms
+                    0x0876                  _u8FlagTask_10ms
+                    0x0878                  _u8FlagTask_500ms
+                    0x0874                  _u8FlagTask_5ms
+                    0x0882                  _u8NewRX
+                    0x087c                  _u8RxBuff_Index
+                    0x0870                  _u8Tim2IntFlag
+                    0x0872                  _u8Tim3IntFlag
 
 External Symbols in Program Memory (by address):
 
@@ -214,9 +217,9 @@ External Symbols in Program Memory (by address):
                   0x000352                  ___subsf3
                   0x000354                  ___addsf3
                   0x00040e                  ___divsf3
-                  0x000492                  ___lesf2
-                  0x000492                  ___ltsf2
                   0x000492                  ___eqsf2
+                  0x000492                  ___ltsf2
+                  0x000492                  ___lesf2
                   0x000496                  ___gesf2
                   0x000496                  ___gtsf2
                   0x00049a                  ___fixunssfsi
@@ -262,150 +265,150 @@ External Symbols in Program Memory (by address):
                   0x000a0c                  _RF_vCheckIRQ
                   0x000a56                  _test_vReceiver
                   0x000a8a                  _test_vTransmitter
-                  0x000a94                  _GPIO_u8SetPortPin
-                  0x000c08                  _GPIO_u8WritePortPin
-                  0x000cb6                  _GPIO_u8ReadPortPin
-                  0x000d3a                  _GPIO_vWritePort
-                  0x000d6e                  _GPIO_u16ReadPort
-                  0x000d98                  _PWM1_vInit
-                  0x000de8                  _PWM2_vInit
-                  0x000e16                  _PWM1_vSetPeriod
-                  0x000e32                  _PWM2_vSetPeriod
-                  0x000e4e                  _PWM1_vSetDuty
-                  0x000f42                  _PWM2_vSetDuty
-                  0x000fac                  _PWM1_vSetDutyPeriod
-                  0x000fd4                  _PWM2_vSetDutyPeriod
-                  0x000fea                  _SPI_RF_u8RxBuffOvf
-                  0x000ff8                  _SPI_RF_u8TxBuffFull
-                  0x001006                  _SPI_RF_u8RxBuffFull
-                  0x001014                  _SPI_RF_vInit
-                  0x001070                  _SPI_RF_vDisable
-                  0x00107c                  _SPI_RF_u8TxByte
-                  0x0010a6                  _SPI_RF_u8TxByteByte
-                  0x0010ee                  _SPI_RF_u8TxCmd
-                  0x001158                  _SPI_RF_u8ReadReg_5Bytes
-                  0x0011ba                  _SPI_RF_u8WriteReg_5Bytes
-                  0x001218                  _TIM2_vInit
-                  0x001242                  _TIM2_vStart
-                  0x00124e                  _TIM2_vStop
-                  0x00125a                  _TIM2_vResetCount
-                  0x001262                  _TIM2_vSetCount
-                  0x00126e                  _TIM2_vSetCountLimit
-                  0x00127a                  _TIM2_vSetCountLimit_1ms
-                  0x001284                  _TIM2_vSetTime
-                  0x0012ac                  _TIM2_u16GetCount
-                  0x0012b4                  _TIM3_vInit
-                  0x0012da                  _TIM3_vStart
-                  0x0012e6                  _TIM3_vStop
-                  0x0012f2                  _TIM3_vResetCount
-                  0x0012fa                  _TIM3_vSetCount
-                  0x001306                  _TIM3_vSetCountLimit
-                  0x001312                  _TIM3_vSetTime
-                  0x00133a                  _TIM3_u16GetCount
-                  0x001342                  _TIM4_vInit
-                  0x001376                  _TIM4_vStart
-                  0x001382                  _TIM4_vStop
-                  0x00138e                  _TIM4_vResetCount
-                  0x001396                  _TIM4_vSetCount
-                  0x0013a2                  _TIM4_vSetCountLimit
-                  0x0013ae                  _TIM4_u16GetCount
-                  0x0013b6                  _TIM5_vInit
-                  0x0013ea                  _TIM5_vStart
-                  0x0013f6                  _TIM5_vStop
-                  0x001402                  _TIM5_vResetCount
-                  0x00140a                  _TIM5_vSetCount
-                  0x001416                  _TIM5_vSetCountLimit
-                  0x001422                  _TIM5_u16GetCount
-                  0x00142a                  _AWS_Start_Line_Follower
-                  0x0014ce                  _AWS_Go_20_cm
-                  0x001524                  _u8RoadNumber
-                  0x00155c                  _bReachIntersection
-                  0x00158a                  _u8WriteMessage
-                  0x0015f0                  _vStateMachine
-                  0x001638                  _HAL_f16GetBaterryPercentage
-                  0x00175c                  _TASK_vSchedule
-                  0x0017f2                  _test_pin_setup
-                  0x001804                  _test_vToggle_CSN
-                  0x001822                  _test_vToggle_CE
-                  0x001840                  _test_vToggle_IRQ
-                  0x00185e                  _LF_vSetPinsDir
-                  0x0018a2                  _LF_vWritePins
-                  0x0018d8                  _LF_u8ReadPins
-                  0x0018fe                  _INT_vInit
-                  0x001912                  _INT0_vInit
-                  0x001932                  _INT1_vInit
-                  0x001958                  _INT2_vInit
-                  0x001984                  _TASK_Inits
-                  0x0019ca                  _TASK_1ms
-                  0x0019d8                  _TASK_5ms
-                  0x0019de                  _TASK_10ms
-                  0x0019e8                  _TASK_100ms
-                  0x0019ee                  _TASK_500ms
-                  0x0019f4                  _TASK_1000ms
-                  0x001a00                  _ADC_vInit
-                  0x001a1a                  _ADC_u16Read
-                  0x001a58                  _QEI_vInit
-                  0x001a8e                  _QEI_u16getCount
-                  0x001a96                  _QEI_vResetCount
-                  0x001aa0                  _QEI_f16getElapsed
-                  0x001ab0                  _HAL_vInitServo
-                  0x001ab8                  _HAL_vSetServoAngle
-                  0x001afc                  _COM_vCheckIRQ
-                  0x001b04                  _COM_vSendMessage
-                  0x001b10                  _COM_vStartListening
-                  0x001b18                  _COM_vProcessMessage
-                  0x001b20                  _COM_vProcessFIFO
-                  0x001b48                  _HAL_vMotorInit
-                  0x001b5a                  _HAL_vSetMotorDir
-                  0x001b6a                  _HAL_vSetMotorSpeed
-                  0x001bc8                  ___delay32
-                  0x001be4                  _MCAL_vInit
-                  0x001bfa                  _OSC_vInit
-                  0x001c0a                  _main
+                  0x000a94                  _COM_vCheckIRQ
+                  0x000a9c                  _COM_vSendMessage
+                  0x000aa8                  _COM_vStartListening
+                  0x000ab0                  _COM_vProcessMessage
+                  0x000dee                  _COM_vProcessFIFO
+                  0x000e1a                  _GPIO_u8SetPortPin
+                  0x000f8e                  _GPIO_u8WritePortPin
+                  0x00103c                  _GPIO_u8ReadPortPin
+                  0x0010c0                  _GPIO_vWritePort
+                  0x0010f4                  _GPIO_u16ReadPort
+                  0x00111e                  _AWS_Start_Line_Follower
+                  0x0011c6                  _AWS_Go_20_cm
+                  0x00121c                  _u8RoadNumber
+                  0x001254                  _bReachIntersection
+                  0x001282                  _u8WriteMessage
+                  0x0012ec                  _vStateMachine
+                  0x001382                  _PWM1_vInit
+                  0x0013d2                  _PWM2_vInit
+                  0x001400                  _PWM1_vSetPeriod
+                  0x00141c                  _PWM2_vSetPeriod
+                  0x001438                  _PWM1_vSetDuty
+                  0x00152c                  _PWM2_vSetDuty
+                  0x001596                  _PWM1_vSetDutyPeriod
+                  0x0015be                  _PWM2_vSetDutyPeriod
+                  0x0015d4                  _SPI_RF_u8RxBuffOvf
+                  0x0015e2                  _SPI_RF_u8TxBuffFull
+                  0x0015f0                  _SPI_RF_u8RxBuffFull
+                  0x0015fe                  _SPI_RF_vInit
+                  0x00165a                  _SPI_RF_vDisable
+                  0x001666                  _SPI_RF_u8TxByte
+                  0x001690                  _SPI_RF_u8TxByteByte
+                  0x0016d8                  _SPI_RF_u8TxCmd
+                  0x001742                  _SPI_RF_u8ReadReg_5Bytes
+                  0x0017a4                  _SPI_RF_u8WriteReg_5Bytes
+                  0x001802                  _TIM2_vInit
+                  0x00182c                  _TIM2_vStart
+                  0x001838                  _TIM2_vStop
+                  0x001844                  _TIM2_vResetCount
+                  0x00184c                  _TIM2_vSetCount
+                  0x001858                  _TIM2_vSetCountLimit
+                  0x001864                  _TIM2_vSetCountLimit_1ms
+                  0x00186e                  _TIM2_vSetTime
+                  0x001896                  _TIM2_u16GetCount
+                  0x00189e                  _TIM3_vInit
+                  0x0018c4                  _TIM3_vStart
+                  0x0018d0                  _TIM3_vStop
+                  0x0018dc                  _TIM3_vResetCount
+                  0x0018e4                  _TIM3_vSetCount
+                  0x0018f0                  _TIM3_vSetCountLimit
+                  0x0018fc                  _TIM3_vSetTime
+                  0x001924                  _TIM3_u16GetCount
+                  0x00192c                  _TIM4_vInit
+                  0x001960                  _TIM4_vStart
+                  0x00196c                  _TIM4_vStop
+                  0x001978                  _TIM4_vResetCount
+                  0x001980                  _TIM4_vSetCount
+                  0x00198c                  _TIM4_vSetCountLimit
+                  0x001998                  _TIM4_u16GetCount
+                  0x0019a0                  _TIM5_vInit
+                  0x0019d4                  _TIM5_vStart
+                  0x0019e0                  _TIM5_vStop
+                  0x0019ec                  _TIM5_vResetCount
+                  0x0019f4                  _TIM5_vSetCount
+                  0x001a00                  _TIM5_vSetCountLimit
+                  0x001a0c                  _TIM5_u16GetCount
+                  0x001a14                  _HAL_f16GetBaterryPercentage
+                  0x001b38                  _TASK_vSchedule
+                  0x001bce                  _test_pin_setup
+                  0x001be0                  _test_vToggle_CSN
+                  0x001bfe                  _test_vToggle_CE
+                  0x001c1c                  _test_vToggle_IRQ
+                  0x001c3a                  _LF_vSetPinsDir
+                  0x001c7e                  _LF_vWritePins
+                  0x001cb4                  _LF_u8ReadPins
+                  0x001cda                  _TASK_Inits
+                  0x001d2c                  _TASK_1ms
+                  0x001d3a                  _TASK_5ms
+                  0x001d40                  _TASK_10ms
+                  0x001d48                  _TASK_100ms
+                  0x001d50                  _TASK_500ms
+                  0x001d56                  _TASK_1000ms
+                  0x001d62                  _INT_vInit
+                  0x001d76                  _INT0_vInit
+                  0x001d96                  _INT1_vInit
+                  0x001dbc                  _INT2_vInit
+                  0x001de8                  _ADC_vInit
+                  0x001e02                  _ADC_u16Read
+                  0x001e40                  _QEI_vInit
+                  0x001e76                  _QEI_u16getCount
+                  0x001e7e                  _QEI_vResetCount
+                  0x001e88                  _QEI_f16getElapsed
+                  0x001e98                  _HAL_vInitServo
+                  0x001ea0                  _HAL_vSetServoAngle
+                  0x001ee4                  _HAL_vMotorInit
+                  0x001ef6                  _HAL_vSetMotorDir
+                  0x001f06                  _HAL_vSetMotorSpeed
+                  0x001f64                  ___delay32
+                  0x001f80                  _MCAL_vInit
+                  0x001f96                  _OSC_vInit
+                  0x001fa6                  _main
 
 External Symbols in Program Memory (by name):
 
-                  0x001a1a                  _ADC_u16Read
-                  0x001a00                  _ADC_vInit
-                  0x0014ce                  _AWS_Go_20_cm
-                  0x00142a                  _AWS_Start_Line_Follower
-                  0x001afc                  _COM_vCheckIRQ
-                  0x001b20                  _COM_vProcessFIFO
-                  0x001b18                  _COM_vProcessMessage
-                  0x001b04                  _COM_vSendMessage
-                  0x001b10                  _COM_vStartListening
-                  0x000d6e                  _GPIO_u16ReadPort
-                  0x000cb6                  _GPIO_u8ReadPortPin
-                  0x000a94                  _GPIO_u8SetPortPin
-                  0x000c08                  _GPIO_u8WritePortPin
-                  0x000d3a                  _GPIO_vWritePort
-                  0x001638                  _HAL_f16GetBaterryPercentage
-                  0x001ab0                  _HAL_vInitServo
-                  0x001b48                  _HAL_vMotorInit
-                  0x001b5a                  _HAL_vSetMotorDir
-                  0x001b6a                  _HAL_vSetMotorSpeed
-                  0x001ab8                  _HAL_vSetServoAngle
-                  0x001912                  _INT0_vInit
-                  0x001932                  _INT1_vInit
-                  0x001958                  _INT2_vInit
-                  0x0018fe                  _INT_vInit
-                  0x0018d8                  _LF_u8ReadPins
-                  0x00185e                  _LF_vSetPinsDir
-                  0x0018a2                  _LF_vWritePins
-                  0x001be4                  _MCAL_vInit
-                  0x001bfa                  _OSC_vInit
-                  0x000d98                  _PWM1_vInit
-                  0x000e4e                  _PWM1_vSetDuty
-                  0x000fac                  _PWM1_vSetDutyPeriod
-                  0x000e16                  _PWM1_vSetPeriod
-                  0x000de8                  _PWM2_vInit
-                  0x000f42                  _PWM2_vSetDuty
-                  0x000fd4                  _PWM2_vSetDutyPeriod
-                  0x000e32                  _PWM2_vSetPeriod
-                  0x001aa0                  _QEI_f16getElapsed
-                  0x001a8e                  _QEI_u16getCount
-                  0x001a58                  _QEI_vInit
-                  0x001a96                  _QEI_vResetCount
+                  0x001e02                  _ADC_u16Read
+                  0x001de8                  _ADC_vInit
+                  0x0011c6                  _AWS_Go_20_cm
+                  0x00111e                  _AWS_Start_Line_Follower
+                  0x000a94                  _COM_vCheckIRQ
+                  0x000dee                  _COM_vProcessFIFO
+                  0x000ab0                  _COM_vProcessMessage
+                  0x000a9c                  _COM_vSendMessage
+                  0x000aa8                  _COM_vStartListening
+                  0x0010f4                  _GPIO_u16ReadPort
+                  0x00103c                  _GPIO_u8ReadPortPin
+                  0x000e1a                  _GPIO_u8SetPortPin
+                  0x000f8e                  _GPIO_u8WritePortPin
+                  0x0010c0                  _GPIO_vWritePort
+                  0x001a14                  _HAL_f16GetBaterryPercentage
+                  0x001e98                  _HAL_vInitServo
+                  0x001ee4                  _HAL_vMotorInit
+                  0x001ef6                  _HAL_vSetMotorDir
+                  0x001f06                  _HAL_vSetMotorSpeed
+                  0x001ea0                  _HAL_vSetServoAngle
+                  0x001d76                  _INT0_vInit
+                  0x001d96                  _INT1_vInit
+                  0x001dbc                  _INT2_vInit
+                  0x001d62                  _INT_vInit
+                  0x001cb4                  _LF_u8ReadPins
+                  0x001c3a                  _LF_vSetPinsDir
+                  0x001c7e                  _LF_vWritePins
+                  0x001f80                  _MCAL_vInit
+                  0x001f96                  _OSC_vInit
+                  0x001382                  _PWM1_vInit
+                  0x001438                  _PWM1_vSetDuty
+                  0x001596                  _PWM1_vSetDutyPeriod
+                  0x001400                  _PWM1_vSetPeriod
+                  0x0013d2                  _PWM2_vInit
+                  0x00152c                  _PWM2_vSetDuty
+                  0x0015be                  _PWM2_vSetDutyPeriod
+                  0x00141c                  _PWM2_vSetPeriod
+                  0x001e88                  _QEI_f16getElapsed
+                  0x001e76                  _QEI_u16getCount
+                  0x001e40                  _QEI_vInit
+                  0x001e7e                  _QEI_vResetCount
                   0x0008fe                  _RF_u8Get_FifoStatus
                   0x0008f0                  _RF_u8Get_ObsTx
                   0x0008e2                  _RF_u8Get_Status
@@ -436,55 +439,55 @@ External Symbols in Program Memory (by name):
                   0x0006a8                  _RF_vSet_RxPipes
                   0x000806                  _RF_vSet_TxAddr
                   0x000842                  _RF_vSet_TxRxAddress
-                  0x001158                  _SPI_RF_u8ReadReg_5Bytes
-                  0x001006                  _SPI_RF_u8RxBuffFull
-                  0x000fea                  _SPI_RF_u8RxBuffOvf
-                  0x000ff8                  _SPI_RF_u8TxBuffFull
-                  0x00107c                  _SPI_RF_u8TxByte
-                  0x0010a6                  _SPI_RF_u8TxByteByte
-                  0x0010ee                  _SPI_RF_u8TxCmd
-                  0x0011ba                  _SPI_RF_u8WriteReg_5Bytes
-                  0x001070                  _SPI_RF_vDisable
-                  0x001014                  _SPI_RF_vInit
-                  0x0019f4                  _TASK_1000ms
-                  0x0019e8                  _TASK_100ms
-                  0x0019de                  _TASK_10ms
-                  0x0019ca                  _TASK_1ms
-                  0x0019ee                  _TASK_500ms
-                  0x0019d8                  _TASK_5ms
-                  0x001984                  _TASK_Inits
-                  0x00175c                  _TASK_vSchedule
-                  0x0012ac                  _TIM2_u16GetCount
-                  0x001218                  _TIM2_vInit
-                  0x00125a                  _TIM2_vResetCount
-                  0x001262                  _TIM2_vSetCount
-                  0x00126e                  _TIM2_vSetCountLimit
-                  0x00127a                  _TIM2_vSetCountLimit_1ms
-                  0x001284                  _TIM2_vSetTime
-                  0x001242                  _TIM2_vStart
-                  0x00124e                  _TIM2_vStop
-                  0x00133a                  _TIM3_u16GetCount
-                  0x0012b4                  _TIM3_vInit
-                  0x0012f2                  _TIM3_vResetCount
-                  0x0012fa                  _TIM3_vSetCount
-                  0x001306                  _TIM3_vSetCountLimit
-                  0x001312                  _TIM3_vSetTime
-                  0x0012da                  _TIM3_vStart
-                  0x0012e6                  _TIM3_vStop
-                  0x0013ae                  _TIM4_u16GetCount
-                  0x001342                  _TIM4_vInit
-                  0x00138e                  _TIM4_vResetCount
-                  0x001396                  _TIM4_vSetCount
-                  0x0013a2                  _TIM4_vSetCountLimit
-                  0x001376                  _TIM4_vStart
-                  0x001382                  _TIM4_vStop
-                  0x001422                  _TIM5_u16GetCount
-                  0x0013b6                  _TIM5_vInit
-                  0x001402                  _TIM5_vResetCount
-                  0x00140a                  _TIM5_vSetCount
-                  0x001416                  _TIM5_vSetCountLimit
-                  0x0013ea                  _TIM5_vStart
-                  0x0013f6                  _TIM5_vStop
+                  0x001742                  _SPI_RF_u8ReadReg_5Bytes
+                  0x0015f0                  _SPI_RF_u8RxBuffFull
+                  0x0015d4                  _SPI_RF_u8RxBuffOvf
+                  0x0015e2                  _SPI_RF_u8TxBuffFull
+                  0x001666                  _SPI_RF_u8TxByte
+                  0x001690                  _SPI_RF_u8TxByteByte
+                  0x0016d8                  _SPI_RF_u8TxCmd
+                  0x0017a4                  _SPI_RF_u8WriteReg_5Bytes
+                  0x00165a                  _SPI_RF_vDisable
+                  0x0015fe                  _SPI_RF_vInit
+                  0x001d56                  _TASK_1000ms
+                  0x001d48                  _TASK_100ms
+                  0x001d40                  _TASK_10ms
+                  0x001d2c                  _TASK_1ms
+                  0x001d50                  _TASK_500ms
+                  0x001d3a                  _TASK_5ms
+                  0x001cda                  _TASK_Inits
+                  0x001b38                  _TASK_vSchedule
+                  0x001896                  _TIM2_u16GetCount
+                  0x001802                  _TIM2_vInit
+                  0x001844                  _TIM2_vResetCount
+                  0x00184c                  _TIM2_vSetCount
+                  0x001858                  _TIM2_vSetCountLimit
+                  0x001864                  _TIM2_vSetCountLimit_1ms
+                  0x00186e                  _TIM2_vSetTime
+                  0x00182c                  _TIM2_vStart
+                  0x001838                  _TIM2_vStop
+                  0x001924                  _TIM3_u16GetCount
+                  0x00189e                  _TIM3_vInit
+                  0x0018dc                  _TIM3_vResetCount
+                  0x0018e4                  _TIM3_vSetCount
+                  0x0018f0                  _TIM3_vSetCountLimit
+                  0x0018fc                  _TIM3_vSetTime
+                  0x0018c4                  _TIM3_vStart
+                  0x0018d0                  _TIM3_vStop
+                  0x001998                  _TIM4_u16GetCount
+                  0x00192c                  _TIM4_vInit
+                  0x001978                  _TIM4_vResetCount
+                  0x001980                  _TIM4_vSetCount
+                  0x00198c                  _TIM4_vSetCountLimit
+                  0x001960                  _TIM4_vStart
+                  0x00196c                  _TIM4_vStop
+                  0x001a0c                  _TIM5_u16GetCount
+                  0x0019a0                  _TIM5_vInit
+                  0x0019ec                  _TIM5_vResetCount
+                  0x0019f4                  _TIM5_vSetCount
+                  0x001a00                  _TIM5_vSetCountLimit
+                  0x0019d4                  _TIM5_vStart
+                  0x0019e0                  _TIM5_vStop
                   0x00034c                  __DefaultInterrupt
                   0x0002c8                  __INT0Interrupt
                   0x000300                  __INT1Interrupt
@@ -494,7 +497,7 @@ External Symbols in Program Memory (by name):
                   0x00033c                  __T4Interrupt
                   0x000344                  __T5Interrupt
                   0x000354                  ___addsf3
-                  0x001bc8                  ___delay32
+                  0x001f64                  ___delay32
                   0x00040e                  ___divsf3
                   0x000492                  ___eqsf2
                   0x00049a                  ___fixunssfsi
@@ -517,17 +520,17 @@ External Symbols in Program Memory (by name):
                   0x00054a                  __funpack2
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x00155c                  _bReachIntersection
-                  0x001c0a                  _main
-                  0x0017f2                  _test_pin_setup
+                  0x001254                  _bReachIntersection
+                  0x001fa6                  _main
+                  0x001bce                  _test_pin_setup
                   0x000a56                  _test_vReceiver
-                  0x001822                  _test_vToggle_CE
-                  0x001804                  _test_vToggle_CSN
-                  0x001840                  _test_vToggle_IRQ
+                  0x001bfe                  _test_vToggle_CE
+                  0x001be0                  _test_vToggle_CSN
+                  0x001c1c                  _test_vToggle_IRQ
                   0x000a8a                  _test_vTransmitter
-                  0x001524                  _u8RoadNumber
-                  0x00158a                  _u8WriteMessage
-                  0x0015f0                  _vStateMachine
+                  0x00121c                  _u8RoadNumber
+                  0x001282                  _u8WriteMessage
+                  0x0012ec                  _vStateMachine
 
 Memory Configuration
 
@@ -748,7 +751,7 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x8df0
+.debug_info       0x000000       0x8f0c
  *(.debug_info)
  .debug_info      0x000000        0x1f5 build/default/debug/hal_motor.o
  .debug_info      0x0001f5        0x13d build/default/debug/main.o
@@ -762,16 +765,16 @@ __FUID3
  .debug_info      0x003b83       0x1184 build/default/debug/mcal_spi.o
  .debug_info      0x004d07       0x1a52 build/default/debug/mcal_timers.o
  .debug_info      0x006759        0xddb build/default/debug/sys_schedule.o
- .debug_info      0x007534        0x33c build/default/debug/sys_tasks.o
- .debug_info      0x007870        0x1aa build/default/debug/hal_servo.o
- .debug_info      0x007a1a        0x1f5 build/default/debug/hal_line_follower.o
- .debug_info      0x007c0f        0x446 build/default/debug/ASW.o
- .debug_info      0x008055        0x1d2 build/default/debug/hal_battery.o
- .debug_info      0x008227        0x2b0 build/default/debug/asw_com.o
- .debug_info      0x0084d7        0x919 build/default/debug/hal_nRF.o
+ .debug_info      0x007534        0x349 build/default/debug/sys_tasks.o
+ .debug_info      0x00787d        0x1aa build/default/debug/hal_servo.o
+ .debug_info      0x007a27        0x1f5 build/default/debug/hal_line_follower.o
+ .debug_info      0x007c1c        0x48a build/default/debug/ASW.o
+ .debug_info      0x0080a6        0x1d2 build/default/debug/hal_battery.o
+ .debug_info      0x008278        0x37b build/default/debug/asw_com.o
+ .debug_info      0x0085f3        0x919 build/default/debug/hal_nRF.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x1086
+.debug_abbrev     0x000000       0x10e6
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x92 build/default/debug/hal_motor.o
  .debug_abbrev    0x000092         0x34 build/default/debug/main.o
@@ -788,12 +791,12 @@ __FUID3
  .debug_abbrev    0x000ade         0xe1 build/default/debug/sys_tasks.o
  .debug_abbrev    0x000bbf         0x72 build/default/debug/hal_servo.o
  .debug_abbrev    0x000c31         0xa5 build/default/debug/hal_line_follower.o
- .debug_abbrev    0x000cd6         0xf9 build/default/debug/ASW.o
- .debug_abbrev    0x000dcf         0x50 build/default/debug/hal_battery.o
- .debug_abbrev    0x000e1f         0xc7 build/default/debug/asw_com.o
- .debug_abbrev    0x000ee6        0x1a0 build/default/debug/hal_nRF.o
+ .debug_abbrev    0x000cd6        0x104 build/default/debug/ASW.o
+ .debug_abbrev    0x000dda         0x50 build/default/debug/hal_battery.o
+ .debug_abbrev    0x000e2a        0x11c build/default/debug/asw_com.o
+ .debug_abbrev    0x000f46        0x1a0 build/default/debug/hal_nRF.o
 
-.debug_line       0x000000       0x10b4
+.debug_line       0x000000       0x1146
  *(.debug_line)
  .debug_line      0x000000         0x56 build/default/debug/hal_motor.o
  .debug_line      0x000056         0x39 build/default/debug/main.o
@@ -807,13 +810,13 @@ __FUID3
  .debug_line      0x000808        0x178 build/default/debug/mcal_spi.o
  .debug_line      0x000980        0x1ed build/default/debug/mcal_timers.o
  .debug_line      0x000b6d        0x143 build/default/debug/sys_schedule.o
- .debug_line      0x000cb0         0x79 build/default/debug/sys_tasks.o
- .debug_line      0x000d29         0x57 build/default/debug/hal_servo.o
- .debug_line      0x000d80         0x6a build/default/debug/hal_line_follower.o
- .debug_line      0x000dea         0xb1 build/default/debug/ASW.o
- .debug_line      0x000e9b         0x65 build/default/debug/hal_battery.o
- .debug_line      0x000f00         0x63 build/default/debug/asw_com.o
- .debug_line      0x000f63        0x151 build/default/debug/hal_nRF.o
+ .debug_line      0x000cb0         0x7b build/default/debug/sys_tasks.o
+ .debug_line      0x000d2b         0x57 build/default/debug/hal_servo.o
+ .debug_line      0x000d82         0x6a build/default/debug/hal_line_follower.o
+ .debug_line      0x000dec         0xd1 build/default/debug/ASW.o
+ .debug_line      0x000ebd         0x65 build/default/debug/hal_battery.o
+ .debug_line      0x000f22         0xd3 build/default/debug/asw_com.o
+ .debug_line      0x000ff5        0x151 build/default/debug/hal_nRF.o
 
 .debug_frame      0x000000       0x10e6
  *(.debug_frame)
@@ -837,7 +840,7 @@ __FUID3
  .debug_frame     0x000cac         0xa0 build/default/debug/asw_com.o
  .debug_frame     0x000d4c        0x39a build/default/debug/hal_nRF.o
 
-.debug_str        0x000000        0x4aa
+.debug_str        0x000000        0x4cd
  *(.debug_str)
  .debug_str       0x000000         0x38 build/default/debug/mcal_adc.o
  .debug_str       0x000038         0x40 build/default/debug/mcal_encoder.o
@@ -849,9 +852,9 @@ __FUID3
  .debug_str       0x00020f         0xeb build/default/debug/mcal_timers.o
  .debug_str       0x0002fa         0xda build/default/debug/sys_schedule.o
  .debug_str       0x0003d4         0x1d build/default/debug/sys_tasks.o
- .debug_str       0x0003f1         0x49 build/default/debug/ASW.o
- .debug_str       0x00043a         0x23 build/default/debug/asw_com.o
- .debug_str       0x00045d         0x4d build/default/debug/hal_nRF.o
+ .debug_str       0x0003f1         0x60 build/default/debug/ASW.o
+ .debug_str       0x000451         0x2f build/default/debug/asw_com.o
+ .debug_str       0x000480         0x4d build/default/debug/hal_nRF.o
 
 .debug_loc
  *(.debug_loc)
@@ -860,7 +863,7 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0xd44
+                  0x000000        0xd54
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x51 build/default/debug/hal_motor.o
@@ -897,9 +900,9 @@ __FUID3
  .debug_pubnames
                   0x00099e         0x32 build/default/debug/hal_battery.o
  .debug_pubnames
-                  0x0009d0         0x7e build/default/debug/asw_com.o
+                  0x0009d0         0x8e build/default/debug/asw_com.o
  .debug_pubnames
-                  0x000a4e        0x2f6 build/default/debug/hal_nRF.o
+                  0x000a5e        0x2f6 build/default/debug/hal_nRF.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -2061,7 +2064,7 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x0001c8        0xb5a
+                  0x0001c8        0xb7c
  .debug_pubtypes
                   0x0001c8         0x2f build/default/debug/hal_motor.o
  .debug_pubtypes
@@ -2097,118 +2100,121 @@ LOAD data_init
  .debug_pubtypes
                   0x000c90         0x26 build/default/debug/hal_battery.o
  .debug_pubtypes
-                  0x000cb6         0x2e build/default/debug/asw_com.o
+                  0x000cb6         0x50 build/default/debug/asw_com.o
  .debug_pubtypes
-                  0x000ce4         0x3e build/default/debug/hal_nRF.o
+                  0x000d06         0x3e build/default/debug/hal_nRF.o
 
 __c30_signature
-                  0x000d22         0xd2
+                  0x000d44         0xd2
  __c30_signature
-                  0x000d22          0x6 build/default/debug/hal_motor.o
+                  0x000d44          0x6 build/default/debug/hal_motor.o
  __c30_signature
-                  0x000d28          0x6 build/default/debug/main.o
+                  0x000d4a          0x6 build/default/debug/main.o
  __c30_signature
-                  0x000d2e          0x6 build/default/debug/mcal_adc.o
+                  0x000d50          0x6 build/default/debug/mcal_adc.o
  __c30_signature
-                  0x000d34          0x6 build/default/debug/mcal_encoder.o
+                  0x000d56          0x6 build/default/debug/mcal_encoder.o
  __c30_signature
-                  0x000d3a          0x6 build/default/debug/mcal_gpio.o
+                  0x000d5c          0x6 build/default/debug/mcal_gpio.o
  __c30_signature
-                  0x000d40          0x6 build/default/debug/mcal_init.o
+                  0x000d62          0x6 build/default/debug/mcal_init.o
  __c30_signature
-                  0x000d46          0x6 build/default/debug/mcal_interrupts.o
+                  0x000d68          0x6 build/default/debug/mcal_interrupts.o
  __c30_signature
-                  0x000d4c          0x6 build/default/debug/mcal_osc.o
+                  0x000d6e          0x6 build/default/debug/mcal_osc.o
  __c30_signature
-                  0x000d52          0x6 build/default/debug/mcal_pwm.o
+                  0x000d74          0x6 build/default/debug/mcal_pwm.o
  __c30_signature
-                  0x000d58          0x6 build/default/debug/mcal_spi.o
+                  0x000d7a          0x6 build/default/debug/mcal_spi.o
  __c30_signature
-                  0x000d5e          0x6 build/default/debug/mcal_timers.o
+                  0x000d80          0x6 build/default/debug/mcal_timers.o
  __c30_signature
-                  0x000d64          0x6 build/default/debug/sys_schedule.o
+                  0x000d86          0x6 build/default/debug/sys_schedule.o
  __c30_signature
-                  0x000d6a          0x6 build/default/debug/sys_tasks.o
+                  0x000d8c          0x6 build/default/debug/sys_tasks.o
  __c30_signature
-                  0x000d70          0x6 build/default/debug/hal_servo.o
+                  0x000d92          0x6 build/default/debug/hal_servo.o
  __c30_signature
-                  0x000d76          0x6 build/default/debug/hal_line_follower.o
+                  0x000d98          0x6 build/default/debug/hal_line_follower.o
  __c30_signature
-                  0x000d7c          0x6 build/default/debug/ASW.o
+                  0x000d9e          0x6 build/default/debug/ASW.o
  __c30_signature
-                  0x000d82          0x6 build/default/debug/hal_battery.o
+                  0x000da4          0x6 build/default/debug/hal_battery.o
  __c30_signature
-                  0x000d88          0x6 build/default/debug/asw_com.o
+                  0x000daa          0x6 build/default/debug/asw_com.o
  __c30_signature
-                  0x000d8e          0x6 build/default/debug/hal_nRF.o
+                  0x000db0          0x6 build/default/debug/hal_nRF.o
  __c30_signature
-                  0x000d94          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+                  0x000db6          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x000d9a          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+                  0x000dbc          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x000da0          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
+                  0x000dc2          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
  __c30_signature
-                  0x000da6          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(addsf3.eo)
+                  0x000dc8          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(addsf3.eo)
  __c30_signature
-                  0x000dac          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(divsf3.eo)
+                  0x000dce          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(divsf3.eo)
  __c30_signature
-                  0x000db2          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(feqltle.eo)
+                  0x000dd4          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(feqltle.eo)
  __c30_signature
-                  0x000db8          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(fgtge.eo)
+                  0x000dda          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(fgtge.eo)
  __c30_signature
-                  0x000dbe          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
+                  0x000de0          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(fixunssfsi.eo)
  __c30_signature
-                  0x000dc4          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
+                  0x000de6          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(floatunsisf.eo)
  __c30_signature
-                  0x000dca          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(fpack.eo)
+                  0x000dec          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(fpack.eo)
  __c30_signature
-                  0x000dd0          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(funpack.eo)
+                  0x000df2          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(funpack.eo)
  __c30_signature
-                  0x000dd6          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(funpack2.eo)
+                  0x000df8          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(funpack2.eo)
  __c30_signature
-                  0x000ddc          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(futil.eo)
+                  0x000dfe          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(futil.eo)
  __c30_signature
-                  0x000de2          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
+                  0x000e04          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(mulsf3.eo)
  __c30_signature
-                  0x000de8          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(fcompare.eo)
+                  0x000e0a          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(fcompare.eo)
  __c30_signature
-                  0x000dee          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
+                  0x000e10          0x6 c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libm-elf.a(floatundisf.eo)
 
-.nbss               0x0850         0x2e
- .nbss              0x0850          0xe build/default/debug/ASW.o
-                    0x0850                  _f16elapsedCMglobal
-                    0x0854                  _bTXflag
-                    0x0856                  _RoadNumflag
- .nbss              0x085e          0x8 build/default/debug/mcal_timers.o
-                    0x085e                  _u16Tim2IntCnt
-                    0x0860                  _u16Tim3IntCnt
-                    0x0862                  _u8Tim2IntFlag
-                    0x0864                  _u8Tim3IntFlag
- .nbss              0x0866          0x8 build/default/debug/sys_schedule.o
-                    0x0866                  _u8FlagTask_5ms
-                    0x0868                  _u8FlagTask_10ms
-                    0x086a                  _u8FlagTask_500ms
-                    0x086c                  _u8FlagTask_1000ms
- .nbss              0x086e          0x8 build/default/debug/hal_nRF.o
-                    0x086e                  _u8RxBuff_Index
-                    0x0870                  _eRF_OpMode
-                    0x0872                  _bRF_IRQ
-                    0x0874                  _u8NewRX
- .nbss              0x0876          0x6 build/default/debug/sys_tasks.o
-                    0x0876                  _u16SpeedGL
-                    0x0878                  _batteryPercentage
- .nbss              0x087c          0x2 build/default/debug/mcal_interrupts.o
-                    0x087c                  _bObstDetected
+.nbss               0x0850         0x36
+ .nbss              0x0850          0xe build/default/debug/sys_tasks.o
+                    0x0850                  _u16SpeedGL
+                    0x0852                  _batteryPercentage
+                    0x0856                  _car
+ .nbss              0x085e          0xe build/default/debug/ASW.o
+                    0x085e                  _f16elapsedCMglobal
+                    0x0862                  _bTXflag
+                    0x0864                  _RoadNumflag
+ .nbss              0x086c          0x8 build/default/debug/mcal_timers.o
+                    0x086c                  _u16Tim2IntCnt
+                    0x086e                  _u16Tim3IntCnt
+                    0x0870                  _u8Tim2IntFlag
+                    0x0872                  _u8Tim3IntFlag
+ .nbss              0x0874          0x8 build/default/debug/sys_schedule.o
+                    0x0874                  _u8FlagTask_5ms
+                    0x0876                  _u8FlagTask_10ms
+                    0x0878                  _u8FlagTask_500ms
+                    0x087a                  _u8FlagTask_1000ms
+ .nbss              0x087c          0x8 build/default/debug/hal_nRF.o
+                    0x087c                  _u8RxBuff_Index
+                    0x087e                  _eRF_OpMode
+                    0x0880                  _bRF_IRQ
+                    0x0882                  _u8NewRX
+ .nbss              0x0884          0x2 build/default/debug/mcal_interrupts.o
+                    0x0884                  _bObstDetected
 
-.ndata              0x087e          0x2
- .ndata             0x087e          0x2 build/default/debug/ASW.o
-                    0x087e                  _u16AngleGL
+.ndata              0x0886          0x2
+ .ndata             0x0886          0x2 build/default/debug/ASW.o
+                    0x0886                  _u16AngleGL
 
-.bss                0x0880         0x26
- .bss               0x0880         0x20 build/default/debug/hal_nRF.o
-                    0x0880                  _au8RxBuff
- .bss               0x08a0          0x6 build/default/debug/sys_tasks.o
-                    0x08a0                  _car
+.nbss               0x0888          0x2
+ .nbss              0x0888          0x2 build/default/debug/asw_com.o
+                    0x0888                  _bIsConflict
+
+.bss                0x088a         0x20
+ .bss               0x088a         0x20 build/default/debug/hal_nRF.o
+                    0x088a                  _au8RxBuff
 
 .config_JTAGEN    0xf8000e          0x2
  .config_JTAGEN
@@ -2255,7 +2261,7 @@ __c30_signature
 .const              0x8676          0x6 load address 0x000676  
  .const             0x8676          0x6 build/default/debug/hal_nRF.o
 
-.text             0x00067c       0x1512
+.text             0x00067c       0x18ae
  .text            0x00067c        0x418 build/default/debug/hal_nRF.o
                   0x00067c                  _RF_vCloseAllPipes
                   0x000692                  _RF_vOpenPipeZero
@@ -2289,129 +2295,129 @@ __c30_signature
                   0x000a0c                  _RF_vCheckIRQ
                   0x000a56                  _test_vReceiver
                   0x000a8a                  _test_vTransmitter
- .text            0x000a94        0x304 build/default/debug/mcal_gpio.o
-                  0x000a94                  _GPIO_u8SetPortPin
-                  0x000c08                  _GPIO_u8WritePortPin
-                  0x000cb6                  _GPIO_u8ReadPortPin
-                  0x000d3a                  _GPIO_vWritePort
-                  0x000d6e                  _GPIO_u16ReadPort
- .text            0x000d98        0x252 build/default/debug/mcal_pwm.o
-                  0x000d98                  _PWM1_vInit
-                  0x000de8                  _PWM2_vInit
-                  0x000e16                  _PWM1_vSetPeriod
-                  0x000e32                  _PWM2_vSetPeriod
-                  0x000e4e                  _PWM1_vSetDuty
-                  0x000f42                  _PWM2_vSetDuty
-                  0x000fac                  _PWM1_vSetDutyPeriod
-                  0x000fd4                  _PWM2_vSetDutyPeriod
- .text            0x000fea        0x22e build/default/debug/mcal_spi.o
-                  0x000fea                  _SPI_RF_u8RxBuffOvf
-                  0x000ff8                  _SPI_RF_u8TxBuffFull
-                  0x001006                  _SPI_RF_u8RxBuffFull
-                  0x001014                  _SPI_RF_vInit
-                  0x001070                  _SPI_RF_vDisable
-                  0x00107c                  _SPI_RF_u8TxByte
-                  0x0010a6                  _SPI_RF_u8TxByteByte
-                  0x0010ee                  _SPI_RF_u8TxCmd
-                  0x001158                  _SPI_RF_u8ReadReg_5Bytes
-                  0x0011ba                  _SPI_RF_u8WriteReg_5Bytes
- .text            0x001218        0x212 build/default/debug/mcal_timers.o
-                  0x001218                  _TIM2_vInit
-                  0x001242                  _TIM2_vStart
-                  0x00124e                  _TIM2_vStop
-                  0x00125a                  _TIM2_vResetCount
-                  0x001262                  _TIM2_vSetCount
-                  0x00126e                  _TIM2_vSetCountLimit
-                  0x00127a                  _TIM2_vSetCountLimit_1ms
-                  0x001284                  _TIM2_vSetTime
-                  0x0012ac                  _TIM2_u16GetCount
-                  0x0012b4                  _TIM3_vInit
-                  0x0012da                  _TIM3_vStart
-                  0x0012e6                  _TIM3_vStop
-                  0x0012f2                  _TIM3_vResetCount
-                  0x0012fa                  _TIM3_vSetCount
-                  0x001306                  _TIM3_vSetCountLimit
-                  0x001312                  _TIM3_vSetTime
-                  0x00133a                  _TIM3_u16GetCount
-                  0x001342                  _TIM4_vInit
-                  0x001376                  _TIM4_vStart
-                  0x001382                  _TIM4_vStop
-                  0x00138e                  _TIM4_vResetCount
-                  0x001396                  _TIM4_vSetCount
-                  0x0013a2                  _TIM4_vSetCountLimit
-                  0x0013ae                  _TIM4_u16GetCount
-                  0x0013b6                  _TIM5_vInit
-                  0x0013ea                  _TIM5_vStart
-                  0x0013f6                  _TIM5_vStop
-                  0x001402                  _TIM5_vResetCount
-                  0x00140a                  _TIM5_vSetCount
-                  0x001416                  _TIM5_vSetCountLimit
-                  0x001422                  _TIM5_u16GetCount
- .text            0x00142a        0x20e build/default/debug/ASW.o
-                  0x00142a                  _AWS_Start_Line_Follower
-                  0x0014ce                  _AWS_Go_20_cm
-                  0x001524                  _u8RoadNumber
-                  0x00155c                  _bReachIntersection
-                  0x00158a                  _u8WriteMessage
-                  0x0015f0                  _vStateMachine
- .text            0x001638        0x124 build/default/debug/hal_battery.o
-                  0x001638                  _HAL_f16GetBaterryPercentage
- .text            0x00175c        0x102 build/default/debug/sys_schedule.o
-                  0x00175c                  _TASK_vSchedule
-                  0x0017f2                  _test_pin_setup
-                  0x001804                  _test_vToggle_CSN
-                  0x001822                  _test_vToggle_CE
-                  0x001840                  _test_vToggle_IRQ
- .text            0x00185e         0xa0 build/default/debug/hal_line_follower.o
-                  0x00185e                  _LF_vSetPinsDir
-                  0x0018a2                  _LF_vWritePins
-                  0x0018d8                  _LF_u8ReadPins
- .text            0x0018fe         0x86 build/default/debug/mcal_interrupts.o
-                  0x0018fe                  _INT_vInit
-                  0x001912                  _INT0_vInit
-                  0x001932                  _INT1_vInit
-                  0x001958                  _INT2_vInit
- .text            0x001984         0x7c build/default/debug/sys_tasks.o
-                  0x001984                  _TASK_Inits
-                  0x0019ca                  _TASK_1ms
-                  0x0019d8                  _TASK_5ms
-                  0x0019de                  _TASK_10ms
-                  0x0019e8                  _TASK_100ms
-                  0x0019ee                  _TASK_500ms
-                  0x0019f4                  _TASK_1000ms
- .text            0x001a00         0x58 build/default/debug/mcal_adc.o
-                  0x001a00                  _ADC_vInit
-                  0x001a1a                  _ADC_u16Read
- .text            0x001a58         0x58 build/default/debug/mcal_encoder.o
-                  0x001a58                  _QEI_vInit
-                  0x001a8e                  _QEI_u16getCount
-                  0x001a96                  _QEI_vResetCount
-                  0x001aa0                  _QEI_f16getElapsed
- .text            0x001ab0         0x4c build/default/debug/hal_servo.o
-                  0x001ab0                  _HAL_vInitServo
-                  0x001ab8                  _HAL_vSetServoAngle
- .text            0x001afc         0x4c build/default/debug/asw_com.o
-                  0x001afc                  _COM_vCheckIRQ
-                  0x001b04                  _COM_vSendMessage
-                  0x001b10                  _COM_vStartListening
-                  0x001b18                  _COM_vProcessMessage
-                  0x001b20                  _COM_vProcessFIFO
- .text            0x001b48         0x46 build/default/debug/hal_motor.o
-                  0x001b48                  _HAL_vMotorInit
-                  0x001b5a                  _HAL_vSetMotorDir
-                  0x001b6a                  _HAL_vSetMotorSpeed
+ .text            0x000a94        0x386 build/default/debug/asw_com.o
+                  0x000a94                  _COM_vCheckIRQ
+                  0x000a9c                  _COM_vSendMessage
+                  0x000aa8                  _COM_vStartListening
+                  0x000ab0                  _COM_vProcessMessage
+                  0x000dee                  _COM_vProcessFIFO
+ .text            0x000e1a        0x304 build/default/debug/mcal_gpio.o
+                  0x000e1a                  _GPIO_u8SetPortPin
+                  0x000f8e                  _GPIO_u8WritePortPin
+                  0x00103c                  _GPIO_u8ReadPortPin
+                  0x0010c0                  _GPIO_vWritePort
+                  0x0010f4                  _GPIO_u16ReadPort
+ .text            0x00111e        0x264 build/default/debug/ASW.o
+                  0x00111e                  _AWS_Start_Line_Follower
+                  0x0011c6                  _AWS_Go_20_cm
+                  0x00121c                  _u8RoadNumber
+                  0x001254                  _bReachIntersection
+                  0x001282                  _u8WriteMessage
+                  0x0012ec                  _vStateMachine
+ .text            0x001382        0x252 build/default/debug/mcal_pwm.o
+                  0x001382                  _PWM1_vInit
+                  0x0013d2                  _PWM2_vInit
+                  0x001400                  _PWM1_vSetPeriod
+                  0x00141c                  _PWM2_vSetPeriod
+                  0x001438                  _PWM1_vSetDuty
+                  0x00152c                  _PWM2_vSetDuty
+                  0x001596                  _PWM1_vSetDutyPeriod
+                  0x0015be                  _PWM2_vSetDutyPeriod
+ .text            0x0015d4        0x22e build/default/debug/mcal_spi.o
+                  0x0015d4                  _SPI_RF_u8RxBuffOvf
+                  0x0015e2                  _SPI_RF_u8TxBuffFull
+                  0x0015f0                  _SPI_RF_u8RxBuffFull
+                  0x0015fe                  _SPI_RF_vInit
+                  0x00165a                  _SPI_RF_vDisable
+                  0x001666                  _SPI_RF_u8TxByte
+                  0x001690                  _SPI_RF_u8TxByteByte
+                  0x0016d8                  _SPI_RF_u8TxCmd
+                  0x001742                  _SPI_RF_u8ReadReg_5Bytes
+                  0x0017a4                  _SPI_RF_u8WriteReg_5Bytes
+ .text            0x001802        0x212 build/default/debug/mcal_timers.o
+                  0x001802                  _TIM2_vInit
+                  0x00182c                  _TIM2_vStart
+                  0x001838                  _TIM2_vStop
+                  0x001844                  _TIM2_vResetCount
+                  0x00184c                  _TIM2_vSetCount
+                  0x001858                  _TIM2_vSetCountLimit
+                  0x001864                  _TIM2_vSetCountLimit_1ms
+                  0x00186e                  _TIM2_vSetTime
+                  0x001896                  _TIM2_u16GetCount
+                  0x00189e                  _TIM3_vInit
+                  0x0018c4                  _TIM3_vStart
+                  0x0018d0                  _TIM3_vStop
+                  0x0018dc                  _TIM3_vResetCount
+                  0x0018e4                  _TIM3_vSetCount
+                  0x0018f0                  _TIM3_vSetCountLimit
+                  0x0018fc                  _TIM3_vSetTime
+                  0x001924                  _TIM3_u16GetCount
+                  0x00192c                  _TIM4_vInit
+                  0x001960                  _TIM4_vStart
+                  0x00196c                  _TIM4_vStop
+                  0x001978                  _TIM4_vResetCount
+                  0x001980                  _TIM4_vSetCount
+                  0x00198c                  _TIM4_vSetCountLimit
+                  0x001998                  _TIM4_u16GetCount
+                  0x0019a0                  _TIM5_vInit
+                  0x0019d4                  _TIM5_vStart
+                  0x0019e0                  _TIM5_vStop
+                  0x0019ec                  _TIM5_vResetCount
+                  0x0019f4                  _TIM5_vSetCount
+                  0x001a00                  _TIM5_vSetCountLimit
+                  0x001a0c                  _TIM5_u16GetCount
+ .text            0x001a14        0x124 build/default/debug/hal_battery.o
+                  0x001a14                  _HAL_f16GetBaterryPercentage
+ .text            0x001b38        0x102 build/default/debug/sys_schedule.o
+                  0x001b38                  _TASK_vSchedule
+                  0x001bce                  _test_pin_setup
+                  0x001be0                  _test_vToggle_CSN
+                  0x001bfe                  _test_vToggle_CE
+                  0x001c1c                  _test_vToggle_IRQ
+ .text            0x001c3a         0xa0 build/default/debug/hal_line_follower.o
+                  0x001c3a                  _LF_vSetPinsDir
+                  0x001c7e                  _LF_vWritePins
+                  0x001cb4                  _LF_u8ReadPins
+ .text            0x001cda         0x88 build/default/debug/sys_tasks.o
+                  0x001cda                  _TASK_Inits
+                  0x001d2c                  _TASK_1ms
+                  0x001d3a                  _TASK_5ms
+                  0x001d40                  _TASK_10ms
+                  0x001d48                  _TASK_100ms
+                  0x001d50                  _TASK_500ms
+                  0x001d56                  _TASK_1000ms
+ .text            0x001d62         0x86 build/default/debug/mcal_interrupts.o
+                  0x001d62                  _INT_vInit
+                  0x001d76                  _INT0_vInit
+                  0x001d96                  _INT1_vInit
+                  0x001dbc                  _INT2_vInit
+ .text            0x001de8         0x58 build/default/debug/mcal_adc.o
+                  0x001de8                  _ADC_vInit
+                  0x001e02                  _ADC_u16Read
+ .text            0x001e40         0x58 build/default/debug/mcal_encoder.o
+                  0x001e40                  _QEI_vInit
+                  0x001e76                  _QEI_u16getCount
+                  0x001e7e                  _QEI_vResetCount
+                  0x001e88                  _QEI_f16getElapsed
+ .text            0x001e98         0x4c build/default/debug/hal_servo.o
+                  0x001e98                  _HAL_vInitServo
+                  0x001ea0                  _HAL_vSetServoAngle
+ .text            0x001ee4         0x46 build/default/debug/hal_motor.o
+                  0x001ee4                  _HAL_vMotorInit
+                  0x001ef6                  _HAL_vSetMotorDir
+                  0x001f06                  _HAL_vSetMotorSpeed
 
-.dinit            0x001b8e         0x3a
- .dinit           0x001b8e         0x3a data_init
+.dinit            0x001f2a         0x3a
+ .dinit           0x001f2a         0x3a data_init
 
-.init.delay32     0x001bc8         0x1c
- .init.delay32    0x001bc8         0x1c c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
-                  0x001bc8                  ___delay32
+.init.delay32     0x001f64         0x1c
+ .init.delay32    0x001f64         0x1c c:/program files (x86)/microchip/xc16/v1.36/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
+                  0x001f64                  ___delay32
 
-.text             0x001be4         0x32
- .text            0x001be4         0x16 build/default/debug/mcal_init.o
-                  0x001be4                  _MCAL_vInit
- .text            0x001bfa         0x10 build/default/debug/mcal_osc.o
-                  0x001bfa                  _OSC_vInit
- .text            0x001c0a          0xc build/default/debug/main.o
-                  0x001c0a                  _main
+.text             0x001f80         0x32
+ .text            0x001f80         0x16 build/default/debug/mcal_init.o
+                  0x001f80                  _MCAL_vInit
+ .text            0x001f96         0x10 build/default/debug/mcal_osc.o
+                  0x001f96                  _OSC_vInit
+ .text            0x001fa6          0xc build/default/debug/main.o
+                  0x001fa6                  _main
